@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Ghada Elashmawy | Portfolio</title>
+    <title>Kholud Mohammad | Arabic Content Writer</title>
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <!-- Fonts -->
@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&amp;family=Great+Vibes&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&amp;family=Great+Vibes&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Cairo:wght@200;300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet" />
 
     <!-- Tailwind Config -->
@@ -30,7 +30,8 @@
                     fontFamily: {
                         "display": ["Manrope", "sans-serif"],
                         "serif-bold": ["Playfair Display", "serif"],
-                        "script": ["Great Vibes", "cursive"]
+                        "script": ["Great Vibes", "cursive"],
+                        "arabic": ["Cairo", "sans-serif"]
                     },
                     borderRadius: {
                         "DEFAULT": "0.25rem",
@@ -45,56 +46,84 @@
 
     <!-- Custom Styles -->
     <style>
+        [dir="rtl"] .font-display {
+            font-family: 'Cairo', sans-serif !important;
+        }
+
+        [dir="rtl"] .serif-massive {
+            font-family: 'Cairo', sans-serif !important;
+            letter-spacing: 0;
+        }
+
+        [dir="rtl"] .font-serif-bold {
+            font-family: 'Cairo', sans-serif !important;
+        }
+
         .serif-massive {
-            font-size: clamp(4rem, 12vw, 10rem);
-            line-height: 0.85;
+            font-size: clamp(3rem, 10vw, 8rem);
+            line-height: 0.9;
+            letter-spacing: -0.04em;
         }
 
-        .script-subtitle {
-            font-size: clamp(1.5rem, 4vw, 3rem);
+        .hero-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0, 0, 0, 0.05) 1px, transparent 0);
+            background-size: 60px 60px;
         }
 
-        .editorial-image-container {
-            height: calc(100vh - 160px);
-            min-height: 500px;
+        .dark .hero-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
         }
 
-        .vertical-text {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
+        @keyframes scroll-bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
         }
 
-        .material-symbols-outlined {
-            font-variation-settings: 'wght' 200, 'opsz' 24;
+        .scroll-indicator {
+            animation: scroll-bounce 2s infinite;
         }
 
-        .editorial-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.5rem;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .project-tile {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        .light .glass-card {
+            background: rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        .project-tile:hover img {
-            transform: scale(1.05);
+        .section-header-line {
+            height: 1px;
+            background: linear-gradient(to right, #e6e6e6, transparent);
         }
 
-        .project-overlay {
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .project-tile:hover .project-overlay {
-            opacity: 1;
+        .dark .section-header-line {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
         }
 
         html {
             scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background: #e6e6e6;
+            color: #0a0a0a;
         }
     </style>
 </head>
@@ -119,47 +148,53 @@
                             fill="currentColor" fill-rule="evenodd"></path>
                     </svg>
                 </div>
-                <h2
-                    class="text-zinc-900 dark:text-white text-[11px] sm:text-base md:text-xl font-black leading-tight tracking-tight uppercase truncate">
-                    GHADA ELASHMAWY</h2>
+                <h2 class="text-zinc-900 dark:text-white text-[11px] sm:text-base md:text-xl font-black leading-tight tracking-tight uppercase truncate"
+                    data-i18n="header_name">
+                    KHOLUD MOHAMMAD</h2>
             </div>
             <div class="hidden md:flex flex-1 justify-end gap-12 items-center">
                 <nav class="flex items-center gap-10">
                     <a class="nav-link text-zinc-400 hover:text-zinc-900 dark:hover:text-primary text-[10px] font-bold uppercase tracking-[0.3em] transition-all relative group"
-                        href="#home">
+                        href="#home" data-i18n="nav_home">
                         Home
                         <span
                             class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all group-hover:w-full"></span>
                     </a>
                     <a class="nav-link text-zinc-400 hover:text-zinc-900 dark:hover:text-primary text-[10px] font-bold uppercase tracking-[0.3em] transition-all relative group"
-                        href="#about">
+                        href="#about" data-i18n="nav_about">
                         About
                         <span
                             class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all group-hover:w-full"></span>
                     </a>
                     <a class="nav-link text-zinc-400 hover:text-zinc-900 dark:hover:text-primary text-[10px] font-bold uppercase tracking-[0.3em] transition-all relative group"
-                        href="#projects">
+                        href="#projects" data-i18n="nav_projects">
                         Projects
                         <span
                             class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all group-hover:w-full"></span>
                     </a>
                     <a class="nav-link text-zinc-400 hover:text-zinc-900 dark:hover:text-primary text-[10px] font-bold uppercase tracking-[0.3em] transition-all relative group"
-                        href="#services">
-                        Services
+                        href="#experience" data-i18n="nav_experience">
+                        Experience
                         <span
                             class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all group-hover:w-full"></span>
                     </a>
                     <a class="nav-link text-zinc-400 hover:text-zinc-900 dark:hover:text-primary text-[10px] font-bold uppercase tracking-[0.3em] transition-all relative group"
-                        href="#contact">
+                        href="#contact" data-i18n="nav_contact">
                         Contact
                         <span
                             class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all group-hover:w-full"></span>
                     </a>
                 </nav>
+                <!-- Language Toggle Desktop -->
+                <button onclick="toggleLanguage()"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-primary transition-all">
+                    <span class="material-symbols-outlined text-sm">language</span>
+                    <span id="lang-text" class="text-[10px] font-bold uppercase tracking-widest">AR</span>
+                </button>
                 <div class="hidden lg:block">
-                    <a href="mailto:elashmawyghada89@gmail.com"
+                    <a href="mailto:Kholud80@hotmail.com"
                         class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-6 bg-zinc-900 dark:bg-primary text-white dark:text-background-dark text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:scale-105 active:scale-95 shadow-xl shadow-primary/10">
-                        <span class="truncate">Hire Me</span>
+                        <span class="truncate" data-i18n="hire_me">Hire Me</span>
                     </a>
                 </div>
             </div>
@@ -183,23 +218,31 @@
                 </div>
                 <nav class="flex flex-col gap-8">
                     <a class="mobile-link text-2xl font-black uppercase tracking-tighter text-zinc-400 hover:text-zinc-900 dark:hover:text-primary transition-all duration-300"
-                        href="#home">Home</a>
+                        href="#home" data-i18n="nav_home">Home</a>
                     <a class="mobile-link text-2xl font-black uppercase tracking-tighter text-zinc-400 hover:text-zinc-900 dark:hover:text-primary transition-all duration-300"
-                        href="#about">About</a>
+                        href="#about" data-i18n="nav_about">About</a>
                     <a class="mobile-link text-2xl font-black uppercase tracking-tighter text-zinc-400 hover:text-zinc-900 dark:hover:text-primary transition-all duration-300"
-                        href="#projects">Projects</a>
+                        href="#projects" data-i18n="nav_projects">Projects</a>
                     <a class="mobile-link text-2xl font-black uppercase tracking-tighter text-zinc-400 hover:text-zinc-900 dark:hover:text-primary transition-all duration-300"
-                        href="#services">Services</a>
+                        href="#experience" data-i18n="nav_experience">Experience</a>
                     <a class="mobile-link text-2xl font-black uppercase tracking-tighter text-zinc-400 hover:text-zinc-900 dark:hover:text-primary transition-all duration-300"
-                        href="#contact">Contact</a>
+                        href="#contact" data-i18n="nav_contact">Contact</a>
 
                     <div class="mt-8 pt-8 border-t border-zinc-100 dark:border-zinc-800 flex flex-col gap-6">
-                        <a href="mailto:elashmawyghada89@gmail.com"
+                        <!-- Language Toggle Mobile -->
+                        <button onclick="toggleLanguage()"
+                            class="flex items-center justify-center gap-3 py-4 border border-zinc-200 dark:border-zinc-800 rounded-full">
+                            <span class="material-symbols-outlined">language</span>
+                            <span id="lang-text-mobile"
+                                class="text-sm font-bold uppercase tracking-widest">العربية</span>
+                        </button>
+                        <a href="mailto:Kholud80@hotmail.com"
                             class="flex items-center justify-center py-4 bg-zinc-900 dark:bg-primary text-white dark:text-background-dark text-[10px] font-bold uppercase tracking-[0.2em] rounded-full transition-transform hover:scale-105 active:scale-95">
-                            Hire Me
+                            <span data-i18n="hire_me">Hire Me</span>
                         </a>
-                        <p class="text-[10px] uppercase tracking-[0.4em] text-zinc-400 font-bold text-center">Cairo -
-                            Dubai - Riyadh</p>
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-zinc-400 font-bold text-center"
+                            data-i18n="location_base">Jordan -
+                            Amman</p>
                     </div>
                 </nav>
             </div>
@@ -211,11 +254,11 @@
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 20) {
                     header.classList.remove('py-6', 'bg-transparent', 'border-transparent');
-                    header.classList.add('py-3', 'bg-background-light/90', 'dark:bg-background-dark/90', 'backdrop-blur-xl', 'border-zinc-200', 'dark:border-zinc-800');
+                    header.classList.add('py-3', 'bg-background-light', 'dark:bg-background-dark', 'md:bg-background-light/90', 'md:dark:bg-background-dark/90', 'backdrop-blur-xl', 'border-zinc-200', 'dark:border-zinc-800');
                 } else {
                     if (!isMenuOpen) {
                         header.classList.add('py-6', 'bg-transparent', 'border-transparent');
-                        header.classList.remove('py-3', 'bg-background-light/90', 'dark:bg-background-dark/90', 'backdrop-blur-xl', 'border-zinc-200', 'dark:border-zinc-800');
+                        header.classList.remove('py-3', 'bg-background-light', 'dark:bg-background-dark', 'md:bg-background-light/90', 'md:dark:bg-background-dark/90', 'backdrop-blur-xl', 'border-zinc-200', 'dark:border-zinc-800');
                     }
                 }
             });
@@ -291,709 +334,986 @@
         </script>
 
         <!-- SECTION 1: HERO (ID: home) -->
-        <section id="home" class="min-h-screen pt-20">
-            <main class="flex flex-col flex-1">
-                <div class="relative w-full max-w-[1440px] mx-auto px-6 md:px-16 pt-12 md:pt-0">
-                    <!-- Layout Container -->
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[80vh]">
-                        <!-- Left: Typography Block -->
-                        <div class="lg:col-span-7 flex flex-col justify-center z-10">
-                            <div class="mb-2">
-                                <h4
-                                    class="text-zinc-500 dark:text-zinc-500 text-xs font-bold leading-normal tracking-[0.3em] uppercase">
-                                    Marketing &amp; Growth Strategy</h4>
-                            </div>
-                            <div class="relative">
-                                <h1
-                                    class="font-serif-bold serif-massive text-zinc-900 dark:text-white mb-4 select-none">
-                                    GROWTH
-                                </h1>
-                                <div class="lg:absolute lg:left-24 lg:-bottom-8">
-                                    <h2
-                                        class="font-script script-subtitle text-zinc-700 dark:text-primary/80 leading-none">
-                                        Real Estate Specialist</h2>
-                                </div>
-                            </div>
-                            <div class="mt-16 lg:mt-32 max-w-lg flex flex-col gap-6">
-                                <p
-                                    class="text-zinc-500 dark:text-zinc-400 text-sm md:text-base font-normal leading-relaxed">
-                                    Developing brand positioning, crafting impactful communication, and turning content
-                                    into real growth in awareness, engagement, and sales.
-                                </p>
-                                <div class="flex items-center gap-6">
-                                    <a href="#projects"
-                                        class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-zinc-900 dark:bg-primary text-white dark:text-background-dark text-sm font-bold tracking-widest uppercase transition-all hover:bg-zinc-700 dark:hover:bg-white">
-                                        <span class="truncate">View Case Studies</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Right: Large Editorial Portrait -->
-                        <div class="lg:col-span-5 relative">
+        <section id="home" class="min-h-screen relative flex items-center justify-center overflow-hidden hero-pattern">
+            <!-- Decorative Elements -->
+            <div class="absolute top-1/4 -left-20 size-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-1/4 -right-20 size-96 bg-primary/10 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <main
+                class="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-16 flex flex-col items-center text-center">
+                <!-- Label/Badge -->
+                <div class="mb-8 opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
+                    >
+                </div>
+
+                <!-- Main Typography -->
+                <div class="relative group">
+                    <h4 class="text-zinc-400 dark:text-zinc-500 text-xs font-bold leading-normal tracking-[0.5em] uppercase mb-4 opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards]"
+                        data-i18n="hero_role">
+                        Arabic Content Writer
+                    </h4>
+                    <h1
+                        class="font-serif-bold serif-massive text-zinc-900 dark:text-white select-none opacity-0 animate-[fadeInUp_1s_ease-out_0.4s_forwards]">
+                        <span class="font-thin italic opacity-60" data-i18n="hero_name_first">Kholud</span><br />
+                        <span class="font-black" data-i18n="hero_name_last">Mohammad</span>
+                    </h1>
+                </div>
+
+                <!-- CTA & Descriptor -->
+                <div
+                    class="mt-12 lg:mt-16 max-w-2xl flex flex-col gap-10 items-center opacity-0 animate-[fadeInUp_1s_ease-out_0.6s_forwards]">
+                    <p class="text-zinc-500 dark:text-zinc-400 text-sm md:text-base font-light leading-relaxed tracking-wide max-w-lg"
+                        data-i18n="hero_tagline">
+                        Elevating brands through strategic storytelling and high-impact Arabic content.
+                        Specialized in SEO, script writing, and digital narratives.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-6">
+                        <a href="#projects"
+                            class="group relative flex min-w-[200px] items-center justify-center overflow-hidden rounded-full h-14 bg-zinc-900 dark:bg-primary text-white dark:text-background-dark text-xs font-bold tracking-[0.2em] uppercase transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-zinc-900/20 dark:shadow-primary/10">
+                            <span class="relative z-10" data-i18n="hero_view_portfolio">View Portfolio</span>
                             <div
-                                class="editorial-image-container relative w-full overflow-hidden rounded-lg bg-zinc-200 dark:bg-zinc-800 shadow-2xl">
-                                <div class="absolute inset-0 bg-center bg-no-repeat bg-cover transition-transform duration-700 hover:scale-105"
-                                    data-alt="Professional portrait" style='background-image: url("images/Hero.png");'>
-                                </div>
-                                <!-- Subtle overlay gradient -->
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-background-dark/40 to-transparent pointer-events-none">
-                                </div>
+                                class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             </div>
-                            <!-- Floating Detail -->
-                            <div
-                                class="absolute -bottom-6 -right-6 hidden xl:flex flex-col items-center gap-4 bg-zinc-100 dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 backdrop-blur-sm">
-                                <p
-                                    class="vertical-text text-[10px] tracking-[0.4em] uppercase text-zinc-400 dark:text-zinc-500 font-bold">
-                                    Cairo - Dubai - Riyadh</p>
-                                <div class="w-px h-12 bg-zinc-300 dark:bg-zinc-700"></div>
-                                <span
-                                    class="material-symbols-outlined text-zinc-400 dark:text-zinc-500 text-lg">public</span>
-                            </div>
-                        </div>
+                        </a>
+                        <a href="#contact"
+                            class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                            <span data-i18n="hero_get_in_touch">Get In Touch</span>
+                        </a>
                     </div>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div
+                    class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-0 animate-[fadeIn_1s_ease-out_1.2s_forwards]">
+                    <span class="text-[9px] font-bold uppercase tracking-[0.5em] text-zinc-400 vertical-text"
+                        data-i18n="scroll">Scroll</span>
+                    <div class="w-px h-12 bg-gradient-to-t from-primary/50 to-transparent"></div>
                 </div>
             </main>
         </section>
+
+        <!-- Animation Definitions -->
+        <style>
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+        </style>
 
         <!-- SECTION 2: ABOUT (ID: about) -->
-        <section id="about" class="w-full bg-background-light dark:bg-surface-dark transition-colors duration-300">
-            <main class="flex flex-col items-center py-16 md:py-24 px-6 md:px-10">
-                <div class="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-                    <!-- Left Column: About Section -->
-                    <div class="lg:col-span-7 flex flex-col gap-8">
-                        <div class="border-l-2 border-primary/30 pl-8">
-                            <span class="text-xs uppercase tracking-[0.3em] font-light opacity-60">Profile</span>
-                            <h1
-                                class="text-zinc-900 dark:text-white tracking-tight text-[48px] md:text-[64px] font-extralight leading-[1.1] pb-6 pt-4">
-                                ABOUT <span class="font-bold">ME</span>
-                            </h1>
-                            <div class="max-w-[580px]">
-                                <p
-                                    class="text-zinc-800 dark:text-primary/90 text-lg md:text-xl font-light leading-relaxed mb-6">
-                                    I’m <span class="font-bold">مسززغ</span> — Marketing Manager &amp; Content &amp;
-                                    Growth Strategist,
-                                    specialized in Real Estate Marketing and Content Strategy. My work focuses on
-                                    developing brand positioning, crafting impactful communication, and turning content
-                                    into real growth in awareness, engagement, and sales.
-                                </p>
-                                <p class="text-zinc-800 dark:text-primary/90 text-base font-light leading-relaxed mb-6">
-                                    I combine my experience in real estate projects with working across different
-                                    industries, which allows me to understand audience behavior deeply and transform
-                                    insights into strategic, results-driven content.
-                                </p>
-                                <div class="mb-8">
-                                    <h3
-                                        class="text-zinc-900 dark:text-white text-xs font-bold uppercase tracking-[0.2em] mb-4 opacity-70">
-                                        My experience includes:</h3>
-                                    <ul
-                                        class="space-y-3 text-zinc-600 dark:text-primary/70 text-sm font-light leading-relaxed">
-                                        <li class="flex items-start gap-3">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-primary/40 mt-1.5 shrink-0"></span>
-                                            <span>Building digital presence from scratch for startups and real estate
-                                                brands</span>
-                                        </li>
-                                        <li class="flex items-start gap-3">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-primary/40 mt-1.5 shrink-0"></span>
-                                            <span>Developing content strategies and publishing frameworks based on
-                                                market and customer needs</span>
-                                        </li>
-                                        <li class="flex items-start gap-3">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-primary/40 mt-1.5 shrink-0"></span>
-                                            <span>Defining Brand Voice & Content Identity</span>
-                                        </li>
-                                        <li class="flex items-start gap-3">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-primary/40 mt-1.5 shrink-0"></span>
-                                            <span>Empowering sales teams to use content as a selling and positioning
-                                                tool</span>
-                                        </li>
-                                        <li class="flex items-start gap-3">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-primary/40 mt-1.5 shrink-0"></span>
-                                            <span>Managing campaigns for multi-industry brands while keeping tone and
-                                                identity consistent</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="border-l-2 border-primary/50 pl-6 my-8">
-                                    <p
-                                        class="text-zinc-500 dark:text-primary/40 text-[10px] uppercase tracking-[0.4em] mb-2 font-bold">
-                                        Marketing Approach</p>
-                                    <p
-                                        class="text-zinc-700 dark:text-primary/80 text-lg font-medium leading-relaxed italic">
-                                        “Content with strategy, communication with purpose — growth that’s real, not
-                                        accidental.”
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Featured Image / Visual Accent -->
-                        <div
-                            class="mt-10 overflow-hidden rounded-xl border border-white/10 aspect-[16/9] w-full bg-neutral-900">
-                            <!-- Using a generic high-quality abstract image or map relevant to strategy/real estate if available, or keeping the clean abstract one for now -->
-                            <img class="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-700"
-                                data-alt="Strategic planning abstract"
-                                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop" />
-                        </div>
-                    </div>
-                    <!-- Right Column: Strengths & Skills -->
-                    <div class="lg:col-span-5 flex flex-col pt-4">
+        <section id="about"
+            class="w-full bg-background-light dark:bg-background-dark py-24 lg:py-32 transition-colors duration-500 overflow-hidden relative">
+            <main class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+                    <div class="lg:col-span-12">
                         <div class="mb-12">
-                            <span class="text-xs uppercase tracking-[0.3em] font-light opacity-60">Competencies</span>
-                            <h2
-                                class="text-zinc-900 dark:text-white text-[32px] font-light leading-tight tracking-[-0.015em] pb-3 pt-4">
-                                STRENGTHS</h2>
-                            <div class="h-[1px] w-12 bg-primary/40 mt-2"></div>
-                        </div>
-                        <div class="flex flex-col gap-6">
-                            <!-- Skill Item -->
-                            <div
-                                class="group flex items-start gap-6 p-6 rounded-lg border border-zinc-300 dark:border-[#4d4d4d] bg-white dark:bg-neutral-800/40 hover:bg-zinc-50 dark:hover:bg-neutral-800 transition-all duration-300">
-                                <div class="text-zinc-900 dark:text-primary mt-1">
-                                    <span
-                                        class="material-symbols-outlined group-hover:scale-110 transition-transform">campaign</span>
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight">Digital
-                                        Presence Building</h3>
-                                    <p class="text-zinc-500 dark:text-[#adadad] text-sm font-normal leading-normal">
-                                        From scratch scaling for startups and established brands.</p>
-                                </div>
-                            </div>
-                            <!-- Skill Item -->
-                            <div
-                                class="group flex items-start gap-6 p-6 rounded-lg border border-zinc-300 dark:border-[#4d4d4d] bg-white dark:bg-neutral-800/40 hover:bg-zinc-50 dark:hover:bg-neutral-800 transition-all duration-300">
-                                <div class="text-zinc-900 dark:text-primary mt-1">
-                                    <span
-                                        class="material-symbols-outlined group-hover:scale-110 transition-transform">edit_note</span>
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight">Content
-                                        Strategy</h3>
-                                    <p class="text-zinc-500 dark:text-[#adadad] text-sm font-normal leading-normal">
-                                        Publishing frameworks based on extensive market needs.</p>
-                                </div>
-                            </div>
-                            <!-- Skill Item -->
-                            <div
-                                class="group flex items-start gap-6 p-6 rounded-lg border border-zinc-300 dark:border-[#4d4d4d] bg-white dark:bg-neutral-800/40 hover:bg-zinc-50 dark:hover:bg-neutral-800 transition-all duration-300">
-                                <div class="text-zinc-900 dark:text-primary mt-1">
-                                    <span
-                                        class="material-symbols-outlined group-hover:scale-110 transition-transform">fingerprint</span>
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight">Brand
-                                        Identity</h3>
-                                    <p class="text-zinc-500 dark:text-[#adadad] text-sm font-normal leading-normal">
-                                        Defining unique Voice and positioning in crowded markets.</p>
-                                </div>
-                            </div>
-                            <!-- Skill Item -->
-                            <div
-                                class="group flex items-start gap-6 p-6 rounded-lg border border-zinc-300 dark:border-[#4d4d4d] bg-white dark:bg-neutral-800/40 hover:bg-zinc-50 dark:hover:bg-neutral-800 transition-all duration-300">
-                                <div class="text-zinc-900 dark:text-primary mt-1">
-                                    <span
-                                        class="material-symbols-outlined group-hover:scale-110 transition-transform">groups</span>
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight">Sales
-                                        Enablement</h3>
-                                    <p class="text-zinc-500 dark:text-[#adadad] text-sm font-normal leading-normal">
-                                        Empowering teams to use content as a selling tool.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-12 flex flex-col gap-4">
-                            <button
-                                class="w-full border border-zinc-900 dark:border-primary text-zinc-900 dark:text-primary py-4 px-6 rounded-lg text-sm font-bold tracking-[0.2em] uppercase hover:bg-zinc-900 hover:text-white dark:hover:bg-primary dark:hover:text-background-dark transition-all">
-                                Download Media Kit
-                            </button>
-                            <p
-                                class="text-center text-zinc-500 dark:text-[#adadad] text-[10px] uppercase tracking-[0.4em] mt-4">
-                                EST. 2024 — GLOBAL SERVICES</p>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </section>
-
-        <!-- SECTION 3: PROJECTS (ID: projects) -->
-        <section id="projects"
-            class="w-full bg-background-light dark:bg-background-dark py-12 lg:py-24 transition-colors duration-300">
-            <main class="mx-auto w-full max-w-[1440px] px-6 lg:px-20">
-                <!-- Section Header & Filters -->
-                <div
-                    class="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8 border-l-2 border-primary pl-8">
-                    <div class="max-w-2xl">
-                        <span
-                            class="text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-500 dark:text-primary/60 mb-4 block">Case
-                            Studies</span>
-                        <h1
-                            class="text-5xl lg:text-7xl font-extrabold tracking-tighter uppercase leading-[0.9] text-zinc-900 dark:text-white">
-                            Selected <br /> Case Studies
-                        </h1>
-                    </div>
-                    <div class="flex flex-wrap gap-4 pb-2">
-                        <div class="group cursor-pointer">
-                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-900 dark:text-white">
-                                All Series</p>
-                            <div class="h-[1px] w-full bg-zinc-900 dark:bg-primary mt-1"></div>
-                        </div>
-                        <div class="group cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
-                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-900 dark:text-white">
-                                Editorial</p>
-                            <div class="h-[1px] w-0 group-hover:w-full bg-zinc-900 dark:bg-primary mt-1 transition-all">
-                            </div>
-                        </div>
-                        <div class="group cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
-                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-900 dark:text-white">
-                                Commercial</p>
-                            <div class="h-[1px] w-0 group-hover:w-full bg-zinc-900 dark:bg-primary mt-1 transition-all">
-                            </div>
-                        </div>
-                        <div class="group cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
-                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-900 dark:text-white">
-                                Archive</p>
-                            <div class="h-[1px] w-0 group-hover:w-full bg-zinc-900 dark:bg-primary mt-1 transition-all">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Irregular Editorial Grid -->
-                <div class="space-y-24">
-                    <!-- Project 01 - Raqia Property (Full Width) -->
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                        <div
-                            class="lg:col-span-7 project-tile aspect-[16/10] bg-zinc-900 rounded-lg overflow-hidden group">
-                            <img alt="Raqia Property Development Digital Launch"
-                                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                src="images/raqia.png" />
-                            <div class="absolute top-6 left-6 flex gap-2">
-                                <span
-                                    class="px-3 py-1 bg-primary text-background-dark text-[10px] font-bold uppercase rounded-full">New
-                                    Launch</span>
-                                <span
-                                    class="px-3 py-1 bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase rounded-full">Branding</span>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-5 flex flex-col gap-6">
-                            <div>
-                                <span class="text-xs font-mono text-primary/60 mb-2 block tracking-widest">REAL ESTATE /
-                                    CASE STUDY 01</span>
-                                <h3
-                                    class="text-4xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white mb-2">
-                                    Raqia Property Development</h3>
-                                <p
-                                    class="text-zinc-500 dark:text-zinc-400 font-bold text-sm tracking-widest uppercase mb-4">
-                                    Duration: 3 Months</p>
-                            </div>
-
-                            <div class="space-y-4">
-                                <p class="text-zinc-800 dark:text-primary/90 text-base leading-relaxed">
-                                    Transformed a zero-presence startup into an established brand with a solid marketing
-                                    system and professional positioning.
-                                </p>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="p-4 rounded border border-zinc-200 dark:border-zinc-800">
-                                        <p class="text-[10px] font-bold text-zinc-400 uppercase mb-2">Challenge</p>
-                                        <p class="text-xs text-zinc-600 dark:text-zinc-400">No social presence, random
-                                            sales efforts, and zero brand awareness.</p>
-                                    </div>
-                                    <div
-                                        class="p-4 rounded border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50">
-                                        <p class="text-[10px] font-bold text-primary uppercase mb-2">Strategy</p>
-                                        <p class="text-xs text-zinc-600 dark:text-zinc-400">Built trust-based content,
-                                            defined brand story, and empowered sales team.</p>
-                                    </div>
-                                </div>
-                                <ul class="space-y-2">
-                                    <li class="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                                        <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
-                                        Built 1,000+ followers in 2 months (Zero start)
-                                    </li>
-                                    <li class="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                                        <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
-                                        Unified Visual & Verbal Identity
-                                    </li>
-                                    <li class="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                                        <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
-                                        Trained sales team as Real Estate Advisors
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="flex flex-wrap gap-3 pt-4">
-                                <a href="https://www.facebook.com/share/p/1BoKZ2t3yB/" target="_blank"
-                                    class="px-5 py-2.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-[10px] font-bold uppercase rounded-lg hover:scale-105 transition-transform">View
-                                    Campaign 1</a>
-                                <a href="https://www.instagram.com/raqia.property.development" target="_blank"
-                                    class="px-5 py-2.5 border border-zinc-900 dark:border-white text-zinc-900 dark:text-white text-[10px] font-bold uppercase rounded-lg hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-900 transition-all">Instagram
-                                    Profile</a>
-                                <a href="https://www.facebook.com/share/p/1A8vukpmzw/" target="_blank"
-                                    class="px-3 py-2.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-500 text-[10px] font-bold uppercase rounded-lg">#2</a>
-                                <a href="https://www.facebook.com/share/p/1MByneNggc/" target="_blank"
-                                    class="px-3 py-2.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-500 text-[10px] font-bold uppercase rounded-lg">#3</a>
-                                <a href="https://www.facebook.com/share/p/1AWUdTFrmp/" target="_blank"
-                                    class="px-3 py-2.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-500 text-[10px] font-bold uppercase rounded-lg">#4</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 02 - Emarrak (Full Width Reverse) -->
-                    <div
-                        class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-12 border-t border-zinc-100 dark:border-zinc-800">
-                        <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col gap-6">
-                            <div>
-                                <span class="text-xs font-mono text-primary/60 mb-2 block tracking-widest">REAL ESTATE /
-                                    CASE STUDY 02</span>
-                                <h3
-                                    class="text-4xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white mb-2">
-                                    Emarrak Development</h3>
-                                <p
-                                    class="text-zinc-500 dark:text-zinc-400 font-bold text-sm tracking-widest uppercase mb-4">
-                                    Aug 2025 – Present</p>
-                            </div>
-
-                            <div class="space-y-4">
-                                <p class="text-zinc-800 dark:text-primary/90 text-base leading-relaxed">
-                                    Scaling a 25-year industry leader’s digital authority across multiple regions (Egypt
-                                    & Saudi Arabia) with high-impact content.
-                                </p>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div
-                                        class="p-4 rounded border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50">
-                                        <p class="text-[10px] font-bold text-primary uppercase mb-2">Innovation</p>
-                                        <p class="text-xs text-zinc-600 dark:text-zinc-400">Viral TikTok strategy (2M+
-                                            organic views) showing the human side of corporate power.</p>
-                                    </div>
-                                    <div class="p-4 rounded border border-zinc-200 dark:border-zinc-800">
-                                        <p class="text-[10px] font-bold text-zinc-400 uppercase mb-2">Expansion</p>
-                                        <p class="text-xs text-zinc-600 dark:text-zinc-400">Global platform launch:
-                                            LinkedIn, YouTube, Twitter, and full Google SEO lift.</p>
-                                    </div>
-                                </div>
-                                <ul class="space-y-2">
-                                    <li class="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                                        <span class="material-symbols-outlined text-primary text-lg">bolt</span>
-                                        2M+ Organic Views via strategic viral content
-                                    </li>
-                                    <li class="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                                        <span class="material-symbols-outlined text-primary text-lg">public</span>
-                                        SEO Dominance for Saudi & Egypt projects
-                                    </li>
-                                    <li class="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                                        <span class="material-symbols-outlined text-primary text-lg">trending_up</span>
-                                        Significant follower growth & Brand Authority
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="flex flex-wrap gap-3 pt-4">
-                                <a href="https://www.facebook.com/emmarekeg" target="_blank"
-                                    class="size-10 flex items-center justify-center border border-zinc-200 dark:border-zinc-800 rounded-lg hover:border-primary group transition-colors">
-                                    <svg class="size-4 fill-zinc-600 dark:fill-primary group-hover:fill-zinc-900 dark:group-hover:fill-white transition-colors"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                                    </svg>
-                                </a>
-                                <a href="https://www.instagram.com/emarrakdevelopment/" target="_blank"
-                                    class="size-10 flex items-center justify-center border border-zinc-200 dark:border-zinc-800 rounded-lg hover:border-primary group transition-colors">
-                                    <svg class="size-4 fill-zinc-600 dark:fill-primary group-hover:fill-zinc-900 dark:group-hover:fill-white transition-colors"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                                    </svg>
-                                </a>
-                                <a href="https://www.tiktok.com/@emarrakdevelopment" target="_blank"
-                                    class="size-10 flex items-center justify-center border border-zinc-200 dark:border-zinc-800 rounded-lg hover:border-primary group transition-colors">
-                                    <svg class="size-4 fill-zinc-600 dark:fill-primary group-hover:fill-zinc-900 dark:group-hover:fill-white transition-colors"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
-                                    </svg>
-                                </a>
-                                <a href="https://www.linkedin.com/in/emarrak-development-112750379/" target="_blank"
-                                    class="size-10 flex items-center justify-center border border-zinc-200 dark:border-zinc-800 rounded-lg hover:border-primary group transition-colors">
-                                    <svg class="size-4 fill-zinc-600 dark:fill-primary group-hover:fill-zinc-900 dark:group-hover:fill-white transition-colors"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                                    </svg>
-                                </a>
-                                <a href="https://www.youtube.com/@EmarrakPropertydevelopment" target="_blank"
-                                    class="size-10 flex items-center justify-center border border-zinc-200 dark:border-zinc-800 rounded-lg hover:border-primary group transition-colors">
-                                    <svg class="size-4 fill-zinc-600 dark:fill-primary group-hover:fill-zinc-900 dark:group-hover:fill-white transition-colors"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div
-                            class="lg:col-span-7 order-1 lg:order-2 project-tile aspect-[16/10] bg-zinc-900 rounded-lg overflow-hidden group">
-                            <img alt="Emarrak Development Digital Authority"
-                                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                src="images/emarrak.png" />
-                        </div>
-                    </div>
-
-                    <!-- Additional Content & Copywriting Projects -->
-                    <div class="pt-24 border-t border-zinc-100 dark:border-zinc-800">
-                        <div class="mb-12">
-                            <h4 class="text-2xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white">
-                                Content Creation &amp; Copywriting</h4>
-                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mt-2">Collaborating with 30+ clients to
-                                tell authentic brand stories.</p>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <!-- Category 1: Furniture -->
-                            <div
-                                class="p-8 rounded-xl bg-zinc-50 dark:bg-neutral-800/40 border border-zinc-200 dark:border-white/10 flex flex-col gap-6">
-                                <div
-                                    class="size-12 rounded-lg bg-zinc-900 dark:bg-primary flex items-center justify-center text-white dark:text-background-dark">
-                                    <span class="material-symbols-outlined">deck</span>
-                                </div>
-                                <div>
-                                    <h5 class="text-lg font-bold text-zinc-900 dark:text-white mb-2">Furniture Industry
-                                    </h5>
-                                    <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">Storytelling and
-                                        product positioning for premium furniture brands.</p>
-                                </div>
-                                <div class="flex flex-wrap gap-2 mt-auto">
-                                    <a href="https://www.facebook.com/share/p/1NqxyJ7yfJ/" target="_blank"
-                                        class="px-3 py-1.5 bg-black/5 dark:bg-white/5 text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Link
-                                        1</a>
-                                    <a href="https://www.facebook.com/share/r/17cJxN3KGT/" target="_blank"
-                                        class="px-3 py-1.5 bg-black/5 dark:bg-white/5 text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Reel
-                                        1</a>
-                                    <a href="https://www.facebook.com/share/r/17wakmK1wc/" target="_blank"
-                                        class="px-3 py-1.5 bg-black/5 dark:bg-white/5 text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Reel
-                                        2</a>
-                                    <a href="https://www.facebook.com/share/r/1XN9FJhtsv/" target="_blank"
-                                        class="px-3 py-1.5 bg-black/5 dark:bg-white/5 text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Reel
-                                        3</a>
-                                    <a href="https://www.facebook.com/share/p/1MJwvju3eD/" target="_blank"
-                                        class="px-3 py-1.5 bg-black/5 dark:bg-white/5 text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Post</a>
-                                </div>
-                            </div>
-
-                            <!-- Category 2: Diverse Industries -->
-                            <div
-                                class="p-8 rounded-xl bg-zinc-50 dark:bg-neutral-800/40 border border-zinc-200 dark:border-white/10 flex flex-col gap-6">
-                                <div
-                                    class="size-12 rounded-lg bg-zinc-900 dark:bg-primary flex items-center justify-center text-white dark:text-background-dark">
-                                    <span class="material-symbols-outlined">category</span>
-                                </div>
-                                <div>
-                                    <h5 class="text-lg font-bold text-zinc-900 dark:text-white mb-2">Multi-Industry Work
-                                    </h5>
-                                    <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">Strategic
-                                        content across diverse sectors including lifestyle and business.</p>
-                                </div>
-                                <div class="flex flex-wrap gap-2 mt-auto">
-                                    <a href="https://www.facebook.com/share/p/17tKj72Pzf/" target="_blank"
-                                        class="px-3 py-1.5 bg-black/5 dark:bg-white/5 text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Social
-                                        1</a>
-                                    <a href="https://www.facebook.com/share/p/1BBaLiQiir/" target="_blank"
-                                        class="px-3 py-1.5 bg-black/5 dark:bg-white/5 text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Social
-                                        2</a>
-                                    <a href="https://www.facebook.com/share/p/1D6QLuop2D/" target="_blank"
-                                        class="px-3 py-1.5 bg-black/5 dark:bg-white/5 text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Social
-                                        3</a>
-                                    <a href="https://www.facebook.com/share/p/1WLR6DYFAm/" target="_blank"
-                                        class="px-3 py-1.5 bg-black/5 dark:bg-white/5 text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Post</a>
-                                </div>
-                            </div>
-
-                            <!-- Category 3: Brand Creation -->
-                            <div
-                                class="p-8 rounded-xl bg-zinc-900 dark:bg-primary/10 border border-zinc-800 dark:border-primary/20 flex flex-col gap-6 shadow-xl">
-                                <div
-                                    class="size-12 rounded-lg bg-primary text-background-dark flex items-center justify-center">
-                                    <span class="material-symbols-outlined">auto_awesome</span>
-                                </div>
-                                <div>
-                                    <h5 class="text-lg font-bold text-white dark:text-primary mb-2">Brands From Scratch
-                                    </h5>
-                                    <p class="text-xs text-zinc-400 dark:text-primary/70 leading-relaxed">Conceptualized
-                                        and executed from idea to full digital presence.</p>
-                                </div>
-                                <div class="flex flex-wrap gap-2 mt-auto">
-                                    <a href="https://www.instagram.com/reel/DCZdr6BM-X6/" target="_blank"
-                                        class="px-3 py-1.5 bg-white/10 text-white text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Brand
-                                        1</a>
-                                    <a href="https://www.instagram.com/p/DEiExhVooDz/" target="_blank"
-                                        class="px-3 py-1.5 bg-white/10 text-white text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Brand
-                                        2</a>
-                                    <a href="https://www.instagram.com/p/DBoiwzPokJo/" target="_blank"
-                                        class="px-3 py-1.5 bg-white/10 text-white text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Brand
-                                        3</a>
-                                    <a href="https://www.instagram.com/reel/DBtrkrLIN4w/" target="_blank"
-                                        class="px-3 py-1.5 bg-white/10 text-white text-[10px] font-bold uppercase rounded hover:bg-primary hover:text-background-dark transition-all">Brand
-                                        4</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </section>
-
-        <!-- SECTION 4: SERVICES & CONTACT (ID: services) -->
-        <section id="services"
-            class="w-full bg-background-light dark:bg-surface-dark py-20 transition-colors duration-300">
-            <main class="flex-1 max-w-5xl mx-auto w-full px-6">
-                <!-- Section Header -->
-                <div class="mb-12">
-                    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-zinc-900 dark:text-white">
-                        Services &amp; Pricing</h1>
-                    <p class="text-zinc-600 dark:text-primary/60 text-lg max-w-xl">Bespoke creative solutions tailored
-                        for luxury brands and contemporary digital narratives.</p>
-                </div>
-                <!-- Service List -->
-                <div class="flex flex-col border-t border-zinc-200 dark:border-primary/20">
-                    <!-- Service Item 1 -->
-                    <div
-                        class="flex items-center gap-6 border-b border-zinc-200 dark:border-primary/10 py-10 hover:bg-zinc-100 dark:hover:bg-primary/5 transition-colors group px-4">
-                        <div
-                            class="text-zinc-900 dark:text-primary flex items-center justify-center rounded-xl bg-zinc-200 dark:bg-primary/10 shrink-0 size-16 group-hover:scale-105 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">rocket_launch</span>
-                        </div>
-                        <div class="flex flex-col flex-1">
-                            <h3 class="text-xl font-semibold leading-tight text-zinc-900 dark:text-white">Start-up
-                                &amp; Brand Launch</h3>
-                            <p class="text-zinc-600 dark:text-primary/60 text-base font-normal mt-1">Building digital
-                                presence from scratch with clear market positioning.</p>
-                        </div>
-                    </div>
-                    <!-- Service Item 2 -->
-                    <div
-                        class="flex items-center gap-6 border-b border-zinc-200 dark:border-primary/10 py-10 hover:bg-zinc-100 dark:hover:bg-primary/5 transition-colors group px-4">
-                        <div
-                            class="text-zinc-900 dark:text-primary flex items-center justify-center rounded-xl bg-zinc-200 dark:bg-primary/10 shrink-0 size-16 group-hover:scale-105 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">campaign</span>
-                        </div>
-                        <div class="flex flex-col flex-1">
-                            <h3 class="text-xl font-semibold leading-tight text-zinc-900 dark:text-white">Content
-                                Strategy &amp; Growth</h3>
-                            <p class="text-zinc-600 dark:text-primary/60 text-base font-normal mt-1">Impactful
-                                communication strategies that drive awareness and engagement.</p>
-                        </div>
-                    </div>
-                    <!-- Service Item 3 -->
-                    <div
-                        class="flex items-center gap-6 border-b border-zinc-200 dark:border-primary/10 py-10 hover:bg-zinc-100 dark:hover:bg-primary/5 transition-colors group px-4">
-                        <div
-                            class="text-zinc-900 dark:text-primary flex items-center justify-center rounded-xl bg-zinc-200 dark:bg-primary/10 shrink-0 size-16 group-hover:scale-105 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">school</span>
-                        </div>
-                        <div class="flex flex-col flex-1">
-                            <h3 class="text-xl font-semibold leading-tight text-zinc-900 dark:text-white">Sales
-                                Enablement</h3>
-                            <p class="text-zinc-600 dark:text-primary/60 text-base font-normal mt-1">Training teams to
-                                use content as a selling and positioning tool.</p>
-                        </div>
-                    </div>
-                    <!-- Service Item 4 -->
-                    <div
-                        class="flex items-center gap-6 border-b border-zinc-200 dark:border-primary/10 py-10 hover:bg-zinc-100 dark:hover:bg-primary/5 transition-colors group px-4">
-                        <div
-                            class="text-zinc-900 dark:text-primary flex items-center justify-center rounded-xl bg-zinc-200 dark:bg-primary/10 shrink-0 size-16 group-hover:scale-105 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">auto_awesome</span>
-                        </div>
-                        <div class="flex flex-col flex-1">
-                            <h3 class="text-xl font-semibold leading-tight text-zinc-900 dark:text-white">Brand Voice
-                                Definition</h3>
-                            <p class="text-zinc-600 dark:text-primary/60 text-base font-normal mt-1">Developing a
-                                consistent and authoritative brand identity across all channels.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Massive CTA / Contact (ID: contact) -->
-                <section id="contact" class="py-40 flex flex-col items-center justify-center text-center">
-                    <div class="space-y-6">
-                        <span
-                            class="text-sm uppercase tracking-[0.3em] font-medium text-zinc-500 dark:text-primary/40">Available
-                            for 2024 projects</span>
-                        <h2
-                            class="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-none text-zinc-900 dark:text-white">
-                            LET'S WORK <br /> TOGETHER
-                        </h2>
-                        <div class="pt-10">
-                            <a class="inline-flex items-center gap-3 text-2xl font-medium hover:gap-6 transition-all group text-zinc-900 dark:text-white"
-                                href="mailto:elashmawyghada89@gmail.com">
-                                elashmawyghada89@gmail.com
-                                <span
-                                    class="material-symbols-outlined text-3xl transition-transform group-hover:translate-x-2">arrow_forward</span>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            </main>
-        </section>
-
-        <!-- Footer (Modified from Projects to fit) -->
-        <footer
-            class="border-t border-zinc-200 dark:border-zinc-800 bg-background-light dark:bg-background-dark py-20 px-6 lg:px-20 transition-colors duration-300">
-            <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-                <div>
-                    <h2 class="text-4xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white mb-6">
-                        GHADA ELASHMAWY</h2>
-                    <a class="text-lg font-medium text-zinc-500 dark:text-primary/60 hover:text-zinc-900 dark:hover:text-white transition-colors underline decoration-zinc-300 dark:decoration-primary/20 underline-offset-8"
-                        href="mailto:elashmawyghada89@gmail.com">elashmawyghada89@gmail.com</a>
-                </div>
-                <div class="grid grid-cols-2 gap-20">
-                    <div class="flex flex-col gap-3">
-                        <span
-                            class="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 dark:text-white/40 mb-2">Social</span>
-                        <div class="flex flex-wrap gap-4 mt-2">
-                            <a href="https://www.facebook.com/ghadh.al.shmawy" target="_blank" class="group">
-                                <svg class="size-5 fill-zinc-900 dark:fill-primary group-hover:fill-zinc-600 dark:group-hover:fill-white transition-colors"
-                                    viewBox="0 0 24 24" aria-hidden="true">
-                                    <path
-                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/ghada-elashmawy-76618b252/" target="_blank"
-                                class="group">
-                                <svg class="size-5 fill-zinc-900 dark:fill-primary group-hover:fill-zinc-600 dark:group-hover:fill-white transition-colors"
-                                    viewBox="0 0 24 24" aria-hidden="true">
-                                    <path
-                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                                </svg>
-                            </a>
-                            <a href="https://wa.me/201022816494" target="_blank" class="group">
-                                <svg class="size-5 fill-zinc-900 dark:fill-primary group-hover:fill-zinc-600 dark:group-hover:fill-white transition-colors"
-                                    viewBox="0 0 24 24" aria-hidden="true">
-                                    <path
-                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.305 1.652zm6.599-3.835c1.516.901 3.1 1.378 4.731 1.38h.005c5.424 0 9.837-4.412 9.84-9.839.002-2.628-1.021-5.1-2.883-6.963-1.861-1.864-4.331-2.889-6.961-2.891-5.424 0-9.836 4.411-9.84 9.838-.001 1.762.467 3.48 1.353 4.981l-.88 3.213 3.285-.861zm11.458-7.614c-.314-.157-1.86-.918-2.148-1.023-.288-.105-.499-.157-.708.157-.21.314-.812 1.023-.995 1.232-.183.21-.366.236-.68.079-.314-.157-1.325-.488-2.524-1.558-.934-.833-1.564-1.862-1.747-2.177-.183-.314-.019-.485.137-.641.141-.14.314-.366.471-.55.157-.183.21-.314.314-.524.105-.21.053-.393-.026-.55-.079-.157-.708-1.703-.97-2.332-.255-.615-.515-.531-.708-.541-.183-.008-.393-.01-.603-.01s-.55.079-.838.393c-.288.314-1.1 1.074-1.1 2.619s1.127 3.038 1.284 3.248c.157.21 2.217 3.386 5.371 4.75.751.325 1.337.519 1.795.665.754.239 1.442.206 1.984.125.603-.09 1.86-.76 2.121-1.467.261-.708.261-1.31.183-1.467-.078-.157-.288-.236-.602-.393z" />
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="flex flex-col gap-3">
                             <span
-                                class="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 dark:text-white/40 mb-2">Navigation</span>
-                            <a class="text-xs font-bold uppercase tracking-widest text-zinc-900 dark:text-primary hover:text-zinc-600 dark:hover:text-white transition-colors"
-                                href="#home">Home</a>
-                            <a class="text-xs font-bold uppercase tracking-widest text-zinc-900 dark:text-primary hover:text-zinc-600 dark:hover:text-white transition-colors"
-                                href="#about">About</a>
-                            <a class="text-xs font-bold uppercase tracking-widest text-zinc-900 dark:text-primary hover:text-zinc-600 dark:hover:text-white transition-colors"
-                                href="#contact">Contact</a>
+                                class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-400 dark:text-zinc-600 mb-4 block"
+                                data-i18n="about_subtitle">01
+                                / Profile</span>
+                            <h2
+                                class="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none text-zinc-900 dark:text-white mb-8">
+                                <span data-i18n="about_title_bg">ABOUT</span> <span class="font-thin italic opacity-40"
+                                    data-i18n="about_title_accent">Me</span>
+                            </h2>
+                            <div class="section-header-line w-full mb-12"></div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+                            <div class="space-y-8">
+                                <h3 class="text-2xl md:text-3xl font-light leading-snug text-zinc-800 dark:text-primary/90"
+                                    data-i18n="about_intro">
+                                    I’m <span class="font-bold border-b-2 border-primary/20">Kholud Mohammad</span> —
+                                    an Arabic Copywriter & Content Writer with over <span
+                                        class="font-bold underline italic decoration-primary/40">12 years</span> of
+                                    experience elevating digital narratives.
+                                </h3>
+
+                                <div
+                                    class="flex flex-wrap gap-x-8 gap-y-4 text-zinc-500 dark:text-zinc-500 font-medium tracking-tight">
+                                    <a href="mailto:Kholud80@hotmail.com"
+                                        class="flex items-center gap-2 hover:text-zinc-900 dark:hover:text-white transition-all group">
+                                        <span class="material-symbols-outlined text-sm">mail</span>
+                                        Kholud80@hotmail.com
+                                    </a>
+                                    <a href="tel:00962778699060"
+                                        class="flex items-center gap-2 hover:text-zinc-900 dark:hover:text-white transition-all group">
+                                        <span class="material-symbols-outlined text-sm">call</span>
+                                        00962778699060
+                                    </a>
+                                    <div class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-sm">location_on</span>
+                                        <span data-i18n="location_base">Jordan - Amman</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="space-y-6 text-zinc-600 dark:text-zinc-400 text-base md:text-lg leading-relaxed font-light">
+                                <p data-i18n="about_p1">
+                                    Experienced content writer specializing in engaging articles, web content, video
+                                    scripts, and social media posts across diverse industries. Skilled in SEO,
+                                    WordPress, and digital content management.
+                                </p>
+                                <p data-i18n="about_p2">
+                                    As a freelance content writer, I deliver high-quality blogs and website content
+                                    tailored to specific audience needs while mastering the latest AI tools for
+                                    optimized, high-impact results.
+                                </p>
+                            </div>
+
+                            <!-- Achievements Checklist -->
+                            <div class="lg:col-span-2 mt-12 pt-12 border-t border-zinc-100 dark:border-zinc-800">
+                                <h4 class="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 dark:text-zinc-600 mb-8"
+                                    data-i18n="skills_header">
+                                    Core Competencies & Impact</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+                                    <div class="flex items-start gap-3 group">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm mt-1 group-hover:scale-125 transition-transform">check_circle</span>
+                                        <span class="text-sm md:text-base font-light dark:text-zinc-300"
+                                            data-i18n="skill_1">Experienced as
+                                            both a Full-time Employee and Freelancer</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 group">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm mt-1 group-hover:scale-125 transition-transform">check_circle</span>
+                                        <span class="text-sm md:text-base font-light dark:text-zinc-300"
+                                            data-i18n="skill_2">SEO Strategist:
+                                            Headline ideation & Organic SEO standards</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 group">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm mt-1 group-hover:scale-125 transition-transform">check_circle</span>
+                                        <span class="text-sm md:text-base font-light dark:text-zinc-300"
+                                            data-i18n="skill_3">Top-ranking
+                                            Blog Content (Homes Jordan)</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 group">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm mt-1 group-hover:scale-125 transition-transform">check_circle</span>
+                                        <span class="text-sm md:text-base font-light dark:text-zinc-300"
+                                            data-i18n="skill_4">Custom Content
+                                            Development for Multiple Websites</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 group">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm mt-1 group-hover:scale-125 transition-transform">check_circle</span>
+                                        <span class="text-sm md:text-base font-light dark:text-zinc-300"
+                                            data-i18n="skill_5">300+ Articles
+                                            (Health, Real Estate, Economics, etc.)</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 group">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm mt-1 group-hover:scale-125 transition-transform">check_circle</span>
+                                        <span class="text-sm md:text-base font-light dark:text-zinc-300"
+                                            data-i18n="skill_6">SEO-Optimized
+                                            Web Content Frameworks</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 group">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm mt-1 group-hover:scale-125 transition-transform">check_circle</span>
+                                        <span class="text-sm md:text-base font-light dark:text-zinc-300"
+                                            data-i18n="skill_7">Professional
+                                            Video Scriptwriting</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 group">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm mt-1 group-hover:scale-125 transition-transform">check_circle</span>
+                                        <span class="text-sm md:text-base font-light dark:text-zinc-300"
+                                            data-i18n="skill_8">Graphic Design
+                                            Mastery with Canva</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 group">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm mt-1 group-hover:scale-125 transition-transform">check_circle</span>
+                                        <span class="text-sm md:text-base font-light dark:text-zinc-300"
+                                            data-i18n="skill_9">Mobile Video
+                                            Post-Production & Montage</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 group">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm mt-1 group-hover:scale-125 transition-transform">check_circle</span>
+                                        <span class="text-sm md:text-base font-light dark:text-zinc-300"
+                                            data-i18n="skill_10">Exceptional
+                                            Organizational Skills & Commitment</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 group">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm mt-1 group-hover:scale-125 transition-transform">check_circle</span>
+                                        <span class="text-sm md:text-base font-light dark:text-zinc-300"
+                                            data-i18n="skill_11">Result-Driven
+                                            Flexible Collaboration</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 group">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm mt-1 group-hover:scale-125 transition-transform">check_circle</span>
+                                        <span class="text-sm md:text-base font-light dark:text-zinc-300"
+                                            data-i18n="skill_12">Comprehensive
+                                            SEO Technical Audits</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expertise & Achievements Grid -->
+                    <div class="lg:col-span-12 mt-24">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                            <!-- Left: Expertise & Skills -->
+                            <div class="lg:col-span-8">
+                                <div class="flex items-center gap-4 mb-10">
+                                    <h3 class="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 dark:text-zinc-500 whitespace-nowrap"
+                                        data-i18n="expertise_skills_header">
+                                        Expertise & Skills</h3>
+                                    <div class="h-px w-full bg-zinc-100 dark:bg-zinc-800/50"></div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Strategic Writing -->
+                                    <div
+                                        class="p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-white/[0.01] hover:bg-white dark:hover:bg-white/[0.03] transition-all duration-500 group">
+                                        <div class="flex items-start justify-between mb-6">
+                                            <span class="material-symbols-outlined text-primary">edit_note</span>
+                                            <span class="text-[10px] font-mono text-zinc-300 dark:text-zinc-700"
+                                                data-i18n="achievement">ACHIEVEMENT</span>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-zinc-900 dark:text-white mb-2 uppercase tracking-tighter"
+                                            data-i18n="exp_title_1">
+                                            Content Leadership</h4>
+                                        <p class="text-zinc-500 dark:text-zinc-500 text-sm font-light leading-relaxed"
+                                            data-i18n="exp_desc_1">
+                                            Authored <span class="text-zinc-900 dark:text-white font-medium">300+
+                                                articles</span> specializing in Health, Real Estate, Economics, and
+                                            Parenting. Collaborative ideation of headlines and topics to drive
+                                            engagement.
+                                        </p>
+                                    </div>
+
+                                    <!-- SEO Mastery -->
+                                    <div
+                                        class="p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-white/[0.01] hover:bg-white dark:hover:bg-white/[0.03] transition-all duration-500 group">
+                                        <div class="flex items-start justify-between mb-6">
+                                            <span class="material-symbols-outlined text-primary">analytics</span>
+                                            <span
+                                                class="text-[10px] font-mono text-zinc-300 dark:text-zinc-700 uppercase"
+                                                data-i18n="technical">TECHNICAL</span>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-zinc-900 dark:text-white mb-2 uppercase tracking-tighter"
+                                            data-i18n="exp_title_2">
+                                            Organic SEO</h4>
+                                        <p class="text-zinc-500 dark:text-zinc-500 text-sm font-light leading-relaxed"
+                                            data-i18n="exp_desc_2">
+                                            Proven track record in <span
+                                                class="text-zinc-900 dark:text-white font-medium">ranking content
+                                                #1</span> (Homes Jordan). Expert in SEO analysis, site audits, and
+                                            search-optimized content creation.
+                                        </p>
+                                    </div>
+
+                                    <!-- Creative Production -->
+                                    <div
+                                        class="p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-white/[0.01] hover:bg-white dark:hover:bg-white/[0.03] transition-all duration-500 group">
+                                        <div class="flex items-start justify-between mb-6">
+                                            <span class="material-symbols-outlined text-primary">movie_edit</span>
+                                            <span
+                                                class="text-[10px] font-mono text-zinc-300 dark:text-zinc-700 uppercase"
+                                                data-i18n="creative">CREATIVE</span>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-zinc-900 dark:text-white mb-2 uppercase tracking-tighter"
+                                            data-i18n="exp_title_3">
+                                            Visual Storytelling</h4>
+                                        <p class="text-zinc-500 dark:text-zinc-500 text-sm font-light leading-relaxed"
+                                            data-i18n="exp_desc_3">
+                                            Scriptwriting for high-impact social videos. Professional mastery of <span
+                                                class="text-zinc-900 dark:text-white font-medium">Canva</span> and
+                                            mobile video post-production tools.
+                                        </p>
+                                    </div>
+
+                                    <!-- Professional Attributes -->
+                                    <div
+                                        class="p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-white/[0.01] hover:bg-white dark:hover:bg-white/[0.03] transition-all duration-500 group">
+                                        <div class="flex items-start justify-between mb-6">
+                                            <span class="material-symbols-outlined text-primary">verified_user</span>
+                                            <span
+                                                class="text-[10px] font-mono text-zinc-300 dark:text-zinc-700 uppercase"
+                                                data-i18n="ethic">ETHIC</span>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-zinc-900 dark:text-white mb-2 uppercase tracking-tighter"
+                                            data-i18n="exp_title_4">
+                                            Work Philosophy</h4>
+                                        <p class="text-zinc-500 dark:text-zinc-500 text-sm font-light leading-relaxed"
+                                            data-i18n="exp_desc_4">
+                                            Extensive experience as both an <span
+                                                class="text-zinc-900 dark:text-white font-medium">Employee &
+                                                Freelancer</span>. Committed to organization, deadline precision, and
+                                            flexible project management.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Foundation -->
+                            <div class="lg:col-span-4 lg:pl-12 lg:border-l border-zinc-100 dark:border-zinc-800/50">
+                                <div class="flex items-center gap-4 mb-10">
+                                    <h3
+                                        class="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 dark:text-zinc-500 whitespace-nowrap">
+                                        Foundation</h3>
+                                    <div class="h-px w-full bg-zinc-100 dark:bg-zinc-800/50 lg:hidden"></div>
+                                </div>
+
+                                <div class="relative group">
+                                    <!-- Decorative Background -->
+                                    <div
+                                        class="absolute inset-0 bg-primary/5 dark:bg-primary/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                    </div>
+
+                                    <div
+                                        class="relative p-10 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 shadow-xl shadow-zinc-200/50 dark:shadow-none overflow-hidden">
+                                        <div class="absolute top-0 right-0 p-6 opacity-10">
+                                            <span class="material-symbols-outlined text-6xl">school</span>
+                                        </div>
+
+                                        <span
+                                            class="text-[10px] font-bold text-primary dark:text-primary/70 uppercase tracking-widest mb-6 block">Academic
+                                            Path</span>
+                                        <h4
+                                            class="text-2xl font-black text-zinc-900 dark:text-white leading-tight mb-2">
+                                            Bachelor of BBA</h4>
+                                        <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium mb-8">Business
+                                            Administration</p>
+
+                                        <div class="flex items-center gap-4">
+                                            <div
+                                                class="size-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
+                                                <span class="material-symbols-outlined text-sm">location_city</span>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs font-bold text-zinc-900 dark:text-white">Petra
+                                                    University</p>
+                                                <p class="text-[10px] text-zinc-400 uppercase tracking-tighter">Amman,
+                                                    Jordan</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div
-                    class="mt-20 flex flex-col md:flex-row justify-between items-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest gap-4">
-                    <p>© 2024 GHADA ELASHMAWY. ALL RIGHTS RESERVED.</p>
-                    <p>STRATEGIC MARKETING &amp; GROWTH</p>
+            </main>
+        </section>
+
+        <section id="projects"
+            class="w-full bg-background-light dark:bg-background-dark py-24 transition-colors duration-500">
+            <main class="max-w-[1440px] mx-auto px-6 md:px-16">
+                <!-- Section Header -->
+                <div class="mb-20">
+                    <span
+                        class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-400 dark:text-zinc-600 mb-4 block"
+                        data-i18n="projects_subtitle">02
+                        / Works</span>
+                    <h2
+                        class="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none text-zinc-900 dark:text-white">
+                        <span data-i18n="projects_title_bg">SELECTED</span> <span class="font-thin italic opacity-40"
+                            data-i18n="projects_title_accent">Portfolio</span>
+                    </h2>
+                    <div class="section-header-line w-full mt-8"></div>
                 </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Project Card: Articles & Blogs -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 transition-all duration-700 hover:-translate-y-2">
+                        <div class="p-10 flex flex-col h-full justify-between">
+                            <div>
+                                <span
+                                    class="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-6 block">01
+                                    / Writing</span>
+                                <h3
+                                    class="text-4xl font-black tracking-tighter text-zinc-900 dark:text-white mb-6 uppercase">
+                                    Articles &<br>Blogs</h3>
+                                <p
+                                    class="text-zinc-500 dark:text-zinc-400 text-sm font-light leading-relaxed mb-10 max-w-xs">
+                                    Strategic storytelling and high-impact SEO content designed for engagement and
+                                    authority.
+                                </p>
+                            </div>
+                            <a href="Articles&Blogs.html"
+                                class="group/btn relative flex items-center justify-between w-full h-14 px-8 rounded-full border border-zinc-200 dark:border-zinc-800 bg-transparent overflow-hidden transition-all duration-500 hover:border-zinc-900 dark:hover:border-primary">
+                                <span
+                                    class="relative z-10 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-900 dark:text-white group-hover/btn:text-white dark:group-hover/btn:text-background-dark transition-colors duration-500">Explore
+                                    Projects</span>
+                                <span
+                                    class="relative z-10 material-symbols-outlined text-lg text-zinc-900 dark:text-white group-hover/btn:text-white dark:group-hover/btn:text-background-dark transition-all duration-500 group-hover/btn:translate-x-1">arrow_forward</span>
+                                <div
+                                    class="absolute inset-0 bg-zinc-900 dark:bg-primary translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: E-Commerce -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 transition-all duration-700 hover:-translate-y-2">
+                        <div class="p-10 flex flex-col h-full justify-between">
+                            <div>
+                                <span
+                                    class="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-6 block">02
+                                    / Digital</span>
+                                <h3
+                                    class="text-4xl font-black tracking-tighter text-zinc-900 dark:text-white mb-6 uppercase">
+                                    E-Commerce</h3>
+                                <p
+                                    class="text-zinc-500 dark:text-zinc-400 text-sm font-light leading-relaxed mb-10 max-w-xs">
+                                    Optimizing digital storefronts through localized content and persuasive,
+                                    high-conversion copy.
+                                </p>
+                            </div>
+                            <a href="E-Commerce.html"
+                                class="group/btn relative flex items-center justify-between w-full h-14 px-8 rounded-full border border-zinc-200 dark:border-zinc-800 bg-transparent overflow-hidden transition-all duration-500 hover:border-zinc-900 dark:hover:border-primary">
+                                <span
+                                    class="relative z-10 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-900 dark:text-white group-hover/btn:text-white dark:group-hover/btn:text-background-dark transition-colors duration-500">Explore
+                                    Projects</span>
+                                <span
+                                    class="relative z-10 material-symbols-outlined text-lg text-zinc-900 dark:text-white group-hover/btn:text-white dark:group-hover/btn:text-background-dark transition-all duration-500 group-hover/btn:translate-x-1">arrow_forward</span>
+                                <div
+                                    class="absolute inset-0 bg-zinc-900 dark:bg-primary translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: Social Media -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 transition-all duration-700 hover:-translate-y-2">
+                        <div class="p-10 flex flex-col h-full justify-between">
+                            <div>
+                                <span
+                                    class="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-6 block">03
+                                    / Content</span>
+                                <h3
+                                    class="text-4xl font-black tracking-tighter text-zinc-900 dark:text-white mb-6 uppercase">
+                                    Social<br>Media</h3>
+                                <p
+                                    class="text-zinc-500 dark:text-zinc-400 text-sm font-light leading-relaxed mb-10 max-w-xs">
+                                    Crafting high-impact social narratives that resonate with global audiences and drive
+                                    growth.
+                                </p>
+                            </div>
+                            <a href="social-media.html"
+                                class="group/btn relative flex items-center justify-between w-full h-14 px-8 rounded-full border border-zinc-200 dark:border-zinc-800 bg-transparent overflow-hidden transition-all duration-500 hover:border-zinc-900 dark:hover:border-primary">
+                                <span
+                                    class="relative z-10 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-900 dark:text-white group-hover/btn:text-white dark:group-hover/btn:text-background-dark transition-colors duration-500">Explore
+                                    Projects</span>
+                                <span
+                                    class="relative z-10 material-symbols-outlined text-lg text-zinc-900 dark:text-white group-hover/btn:text-white dark:group-hover/btn:text-background-dark transition-all duration-500 group-hover/btn:translate-x-1">arrow_forward</span>
+                                <div
+                                    class="absolute inset-0 bg-zinc-900 dark:bg-primary translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: Videos -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 transition-all duration-700 hover:-translate-y-2">
+                        <div class="p-10 flex flex-col h-full justify-between">
+                            <div>
+                                <span
+                                    class="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-6 block">04
+                                    / Scripts</span>
+                                <h3
+                                    class="text-4xl md:text-6xl font-black tracking-tighter text-zinc-900 dark:text-white mb-6 uppercase">
+                                    Videos</h3>
+                                <p
+                                    class="text-zinc-500 dark:text-zinc-400 text-sm font-light leading-relaxed mb-10 max-w-xs">
+                                    Visual storytelling for high-production social campaigns and digital video
+                                    narratives.
+                                </p>
+                            </div>
+                            <a href="Videos.html"
+                                class="group/btn relative flex items-center justify-between w-full h-14 px-8 rounded-full border border-zinc-200 dark:border-zinc-800 bg-transparent overflow-hidden transition-all duration-500 hover:border-zinc-900 dark:hover:border-primary">
+                                <span
+                                    class="relative z-10 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-900 dark:text-white group-hover/btn:text-white dark:group-hover/btn:text-background-dark transition-colors duration-500">Explore
+                                    Projects</span>
+                                <span
+                                    class="relative z-10 material-symbols-outlined text-lg text-zinc-900 dark:text-white group-hover/btn:text-white dark:group-hover/btn:text-background-dark transition-all duration-500 group-hover/btn:translate-x-1">arrow_forward</span>
+                                <div
+                                    class="absolute inset-0 bg-zinc-900 dark:bg-primary translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+        <!-- SECTION 4: EXPERIENCE (ID: experience) -->
+        <section id="experience"
+            class="w-full bg-background-light dark:bg-background-dark py-24 transition-colors duration-500">
+            <main class="max-w-[1440px] mx-auto px-6 md:px-16">
+                <!-- Section Header -->
+                <div class="mb-20">
+                    <span
+                        class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-400 dark:text-zinc-600 mb-4 block"
+                        data-i18n="exp_subtitle">03
+                        / Path</span>
+                    <h2
+                        class="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none text-zinc-900 dark:text-white">
+                        <span data-i18n="exp_header_bg">WORK</span> <span class="font-thin italic opacity-40"
+                            data-i18n="exp_header_accent">Experience</span>
+                    </h2>
+                    <div class="section-header-line w-full mt-8"></div>
+                </div>
+
+                <!-- Timeline List -->
+                <div class="relative flex flex-col gap-2">
+                    <!-- Exp Item 01 -->
+                    <div
+                        class="group py-12 border-b border-zinc-200 dark:border-zinc-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start hover:bg-zinc-100/50 dark:hover:bg-white/[0.01] transition-colors rounded-xl px-4 -mx-4">
+                        <div class="lg:col-span-3">
+                            <p class="text-[11px] font-black text-zinc-900 dark:text-primary tracking-[0.4em] uppercase mb-4"
+                                data-i18n="exp_date_1">Nov 2022 —
+                                Present</p>
+                            <h3
+                                class="text-2xl font-black tracking-tight text-zinc-900 dark:text-white group-hover:translate-x-2 transition-transform">
+                                Homes Jordan</h3>
+                            <p class="text-xs font-bold text-zinc-500 uppercase tracking-widest mt-1"
+                                data-i18n="exp_item_1_role">Arabic Copywriter
+                            </p>
+                        </div>
+                        <div class="lg:col-span-8 lg:col-start-5">
+                            <p class="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed font-light"
+                                data-i18n="exp_item_1_desc">
+                                Creating high-quality real estate articles, conducting market research, and implementing
+                                SEO
+                                strategies to improve website rankings. Proficient in producing engaging, informative
+                                articles tailored to the industry.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Exp Item 02 -->
+                    <div
+                        class="group py-12 border-b border-zinc-200 dark:border-zinc-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start hover:bg-zinc-100/50 dark:hover:bg-white/[0.01] transition-colors rounded-xl px-4 -mx-4">
+                        <div class="lg:col-span-3">
+                            <p class="text-[11px] font-black text-zinc-900 dark:text-primary tracking-[0.4em] uppercase mb-4"
+                                data-i18n="exp_date_2">Feb 2019 —
+                                July
+                                2019</p>
+                            <h3
+                                class="text-2xl font-black tracking-tight text-zinc-900 dark:text-white group-hover:translate-x-2 transition-transform">
+                                Reach Immigration</h3>
+                            <p class="text-xs font-bold text-zinc-500 uppercase tracking-widest mt-1"
+                                data-i18n="exp_item_2_role">SEO Analyst &
+                                Content
+                                Writer</p>
+                        </div>
+                        <div class="lg:col-span-8 lg:col-start-5">
+                            <p class="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed font-light"
+                                data-i18n="exp_item_2_desc">
+                                Created detailed immigration programs and conducted research for blogs covering travel
+                                and
+                                tourism. Developed marketing copy and applied SEO strategies to boost organic traffic.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Exp Item 03 -->
+                    <div
+                        class="group py-12 border-b border-zinc-200 dark:border-zinc-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start hover:bg-zinc-100/50 dark:hover:bg-white/[0.01] transition-colors rounded-xl px-4 -mx-4">
+                        <div class="lg:col-span-3">
+                            <p class="text-[11px] font-black text-zinc-900 dark:text-primary tracking-[0.4em] uppercase mb-4"
+                                data-i18n="exp_date_3">Jan 2016 —
+                                Mar
+                                2018</p>
+                            <h3
+                                class="text-2xl font-black tracking-tight text-zinc-900 dark:text-white group-hover:translate-x-2 transition-transform">
+                                SUMUW SAM Est.</h3>
+                            <p class="text-xs font-bold text-zinc-500 uppercase tracking-widest mt-1"
+                                data-i18n="exp_item_3_role">Senior Digital
+                                Representative</p>
+                        </div>
+                        <div class="lg:col-span-8 lg:col-start-5">
+                            <p class="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed font-light"
+                                data-i18n="exp_item_3_desc">
+                                Managed e-commerce website content across OpenCart and Magento platforms. Oversaw social
+                                media accounts and customer care operations while monitoring pricing and promotions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Exp Item 04 -->
+                    <div
+                        class="group py-12 border-b border-zinc-200 dark:border-zinc-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start hover:bg-zinc-100/50 dark:hover:bg-white/[0.01] transition-colors rounded-xl px-4 -mx-4">
+                        <div class="lg:col-span-3">
+                            <p class="text-[11px] font-black text-primary tracking-[0.4em] uppercase mb-4"
+                                data-i18n="exp_date_4">Feb 2014 —
+                                Oct
+                                2015</p>
+                            <h3
+                                class="text-2xl font-black tracking-tight text-zinc-900 dark:text-white group-hover:translate-x-2 transition-transform">
+                                Reach Holdings LTD.</h3>
+                            <p class="text-xs font-bold text-zinc-500 uppercase tracking-widest mt-1"
+                                data-i18n="exp_item_4_role">Content & Social
+                                Media
+                                Specialist</p>
+                        </div>
+                        <div class="lg:col-span-8 lg:col-start-5">
+                            <p class="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed font-light"
+                                data-i18n="exp_item_4_desc">
+                                Managed website content for 3eesho.com, produced multimedia content for Mobily KSA and
+                                Zain
+                                Iraq, and supervised development for the Lomi (My Diet) application.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Exp Item 05 -->
+                    <div
+                        class="group py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start hover:bg-zinc-100/50 dark:hover:bg-white/[0.01] transition-colors rounded-xl px-4 -mx-4">
+                        <div class="lg:col-span-3">
+                            <p class="text-[11px] font-black text-primary tracking-[0.4em] uppercase mb-4"
+                                data-i18n="exp_date_5">Feb 2007 —
+                                Oct
+                                2011</p>
+                            <h3
+                                class="text-2xl font-black tracking-tight text-zinc-900 dark:text-white group-hover:translate-x-2 transition-transform">
+                                Yahoo!Maktoob</h3>
+                            <p class="text-xs font-bold text-zinc-500 uppercase tracking-widest mt-1"
+                                data-i18n="exp_item_5_role">Customer Care
+                                Relation
+                                Officer</p>
+                        </div>
+                        <div class="lg:col-span-8 lg:col-start-5">
+                            <p class="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed font-light"
+                                data-i18n="exp_item_5_desc">
+                                Handled administrative tasks and customer relationship operations for Resellers, SEO,
+                                and
+                                Customer Care departments, ensuring smooth service delivery.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+
+
+        <!-- Footer -->
+        <footer id="contact" class="bg-zinc-900 text-white py-24 px-6 lg:px-20 overflow-hidden relative">
+            <!-- Background Accent -->
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2">
+            </div>
+
+            <div class="max-w-[1440px] mx-auto relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20 border-b border-white/10 pb-20">
+                    <!-- Branding -->
+                    <div class="lg:col-span-12">
+                        <span class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-500 mb-6 block"
+                            data-i18n="footer_ready">Ready
+                            to
+                            Connect?</span>
+                        <h2 class="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none mb-12">
+                            <span data-i18n="footer_collab_bg">LET'S</span> <span
+                                class="font-thin italic opacity-40 text-background-light"
+                                data-i18n="footer_collab_accent">Collaborate</span>
+                        </h2>
+                    </div>
+
+                    <!-- Info Grid -->
+                    <div class="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                        <!-- Contact -->
+                        <div class="flex flex-col gap-6">
+                            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500"
+                                data-i18n="footer_contact_details">Contact
+                                Details</span>
+                            <div class="space-y-4">
+                                <a href="mailto:Kholud80@hotmail.com"
+                                    class="text-2xl font-light hover:text-primary transition-colors block">Kholud80@hotmail.com</a>
+                                <a href="tel:00962778699060"
+                                    class="text-2xl font-light hover:text-primary transition-colors block">00962778699060</a>
+                            </div>
+                        </div>
+
+                        <!-- Social -->
+                        <div class="flex flex-col gap-6">
+                            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500"
+                                data-i18n="footer_digital_presence">Digital
+                                Presence</span>
+                            <div class="flex gap-4">
+                                <a href="mailto:Kholud80@hotmail.com"
+                                    class="size-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-zinc-900 transition-all">
+                                    <span class="material-symbols-outlined text-lg">mail</span>
+                                </a>
+                                <a href="tel:00962778699060"
+                                    class="size-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-zinc-900 transition-all">
+                                    <span class="material-symbols-outlined text-lg">call</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="flex flex-col gap-6">
+                            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500"
+                                data-i18n="footer_quick_links">Quick
+                                Links</span>
+                            <div class="flex flex-col gap-2">
+                                <a href="#home"
+                                    class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                                    data-i18n="nav_home">Home</a>
+                                <a href="#about"
+                                    class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                                    data-i18n="nav_about">About</a>
+                                <a href="#projects"
+                                    class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                                    data-i18n="nav_projects">Projects</a>
+                                <a href="#experience"
+                                    class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                                    data-i18n="nav_experience">Experience</a>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex flex-col gap-6">
+                            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500"
+                                data-i18n="footer_location">Base</span>
+                            <p class="text-2xl font-light" data-i18n="location_base">Jordan — Amman</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center text-[10px] font-mono text-zinc-500 uppercase tracking-widest gap-8">
+                    <p data-i18n="footer_rights">© 2026 KHOLUD MOHAMMAD. ALL RIGHTS RESERVED.</p>
+                    <div class="flex gap-8">
+                        <span>Content Strategy</span>
+                        <span>/</span>
+                        <span>Arabic Copywriting</span>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 
     <script>
+        // Language System
+        const translations = {
+            en: {
+                header_name: "KHOLUD MOHAMMAD",
+                nav_home: "Home",
+                nav_about: "About",
+                nav_projects: "Projects",
+                nav_experience: "Experience",
+                nav_contact: "Contact",
+                hire_me: "Hire Me",
+                hero_role: "Arabic Content Writer",
+                hero_name_first: "Kholud",
+                hero_name_last: "Mohammad",
+                hero_tagline: "Elevating brands through strategic storytelling and high-impact Arabic content. Specialized in SEO, script writing, and digital narratives.",
+                hero_view_portfolio: "View Portfolio",
+                hero_get_in_touch: "Get In Touch",
+                scroll: "Scroll",
+                about_subtitle: "01 / Profile",
+                about_title_bg: "ABOUT",
+                about_title_accent: "Me",
+                about_intro: "I’m <span class='font-bold border-b-2 border-primary/20'>Kholud Mohammad</span> — an Arabic Copywriter & Content Writer with over <span class='font-bold underline italic decoration-primary/40'>12 years</span> of experience.",
+                about_p1: "Experienced content writer specializing in engaging articles, web content, video scripts, and social media posts across diverse industries. Skilled in SEO, WordPress, and digital content management.",
+                about_p2: "As a freelance content writer, I deliver high-quality blogs and website content tailored to specific audience needs while mastering the latest AI tools.",
+                skills_header: "Core Competencies & Impact",
+                skill_1: "Experienced as both a Full-time Employee and Freelancer",
+                skill_2: "SEO Strategist: Headline ideation & Organic SEO standards",
+                skill_3: "Top-ranking Blog Content (Homes Jordan)",
+                skill_4: "Custom Content Development for Multiple Websites",
+                skill_5: "300+ Articles (Health, Real Estate, Economics, etc.)",
+                skill_6: "SEO-Optimized Web Content Frameworks",
+                skill_7: "Professional Video Scriptwriting",
+                skill_8: "Graphic Design Mastery with Canva",
+                skill_9: "Mobile Video Post-Production & Montage",
+                skill_10: "Exceptional Organizational Skills & Commitment",
+                skill_11: "Result-Driven Flexible Collaboration",
+                skill_12: "Comprehensive SEO Technical Audits",
+                expertise_skills_header: "Expertise & Skills",
+                achievement: "ACHIEVEMENT",
+                technical: "TECHNICAL",
+                creative: "CREATIVE",
+                ethic: "ETHIC",
+                exp_title_1: "Content Leadership",
+                exp_desc_1: "Authored 300+ articles specializing in Health, Real Estate, Economics, and Parenting.",
+                exp_title_2: "Organic SEO",
+                exp_desc_2: "Proven track record in ranking content #1 (Homes Jordan). Expert in SEO analysis.",
+                exp_title_3: "Visual Storytelling",
+                exp_desc_3: "Scriptwriting for high-impact social videos. Professional mastery of Canva.",
+                exp_title_4: "Work Philosophy",
+                exp_desc_4: "Experienced as Employee & Freelancer. Committed to deadline precision.",
+                projects_subtitle: "02 / Works",
+                projects_title_bg: "SELECTED",
+                projects_title_accent: "Portfolio",
+                exp_subtitle: "03 / Path",
+                exp_header_bg: "WORK",
+                exp_header_accent: "Experience",
+                exp_date_1: "Nov 2022 — Present",
+                exp_item_1_role: "Arabic Copywriter",
+                exp_item_1_desc: "Creating high-quality real estate articles, conducting market research, and implementing SEO strategies.",
+                exp_date_2: "Feb 2019 — July 2019",
+                exp_item_2_role: "SEO Analyst & Content Writer",
+                exp_item_2_desc: "Created immigration programs and conducted research for blogs. Developed marketing copy.",
+                exp_date_3: "Jan 2016 — Mar 2018",
+                exp_item_3_role: "Senior Digital Representative",
+                exp_item_3_desc: "Managed e-commerce website content across OpenCart and Magento platforms.",
+                exp_date_4: "Feb 2014 — Oct 2015",
+                exp_item_4_role: "Content & Social Media Specialist",
+                exp_item_4_desc: "Managed website content for 3eesho.com and produced multimedia content for Mobily KSA.",
+                exp_date_5: "Feb 2007 — Oct 2011",
+                exp_item_5_role: "Customer Care Relation Officer",
+                exp_item_5_desc: "Handled administrative tasks and customer relationship operations for Yahoo!Maktoob.",
+                footer_ready: "Ready to Connect?",
+                footer_collab_bg: "LET'S",
+                footer_collab_accent: "Collaborate",
+                footer_contact_details: "Contact Details",
+                footer_digital_presence: "Digital Presence",
+                footer_quick_links: "Quick Links",
+                footer_location: "Base",
+                location_base: "Jordan — Amman",
+                footer_rights: "© 2026 KHOLUD MOHAMMAD. ALL RIGHTS RESERVED."
+            },
+            ar: {
+                header_name: "خلود محمد",
+                nav_home: "الرئيسية",
+                nav_about: "من أنا",
+                nav_projects: "أعمالي",
+                nav_experience: "خبراتي",
+                nav_contact: "اتصل بي",
+                hire_me: "وظفني",
+                hero_role: "كاتبة محتوى إبداعي",
+                hero_name_first: "خلود",
+                hero_name_last: "محمد",
+                hero_tagline: "الارتقاء بالعلامات التجارية من خلال القصص الاستراتيجية والمحتوى العربي عالي التأثير. متخصصة في الـ SEO وكتابة السيناريو.",
+                hero_view_portfolio: "عرض الأعمال",
+                hero_get_in_touch: "تواصل معي",
+                scroll: "تحرك للأسفل",
+                about_subtitle: "٠١ / الملف الشخصي",
+                about_title_bg: "من",
+                about_title_accent: "أنا",
+                about_intro: "أنا <span class='font-bold border-b-2 border-primary/20'>خلود محمد</span> — كاتبة محتوى متخصصة ولدي خبرة تفوق <span class='font-bold underline italic decoration-primary/40'>١٢ عاماً</span> في تطوير المحتوى الرقمي.",
+                about_p1: "كاتبة محتوى خبيرة متخصصة في المقالات الجذابة، محتوى المواقع، سيناريوهات الفيديو، ومنشورات التواصل الاجتماعي في مجالات متنوعة.",
+                about_p2: "ككاتبة محتوى مستقلة، أقدم مدونات عالية الجودة ومحتوى مواقع مخصص لاحتياجات الجمهور مع إتقان أحدث أدوات الذكاء الاصطناعي.",
+                skills_header: "الكفاءات الأساسية والأثر",
+                skill_1: "عملت كموظفة بدوام كامل وفريلانسر",
+                skill_2: "استشارية SEO: ابتكار العناوين ومعايير البحث العضوي",
+                skill_3: "تصدر نتائج البحث بمدونة (Homes Jordan)",
+                skill_4: "إنشاء محتوى مخصص للعديد من المواقع الإلكترونية",
+                skill_5: "أكثر من ٣٠٠ مقال (صحة، عقارات، اقتصاد، إلخ)",
+                skill_6: "أطر عمل محتوى الويب المتوافقة مع الـ SEO",
+                skill_7: "كتابة سيناريو الفيديو باحترافية",
+                skill_8: "إتقان التصميم الجرافيكي باستخدام Canva",
+                skill_9: "مونتاج وإنتاج الفيديو عبر الموبايل",
+                skill_10: "مهارات تنظيمية استثنائية والتزام تام",
+                skill_11: "تعاون مرن يركز على النتائج",
+                skill_12: "تحليل وتدقيق الـ SEO التقني الشامل",
+                expertise_skills_header: "الخبرات والمهارات",
+                achievement: "إنجاز",
+                technical: "تقني",
+                creative: "إبداعي",
+                ethic: "أخلاقيات العمل",
+                exp_title_1: "قيادة المحتوى",
+                exp_desc_1: "تأليف أكثر من ٣٠٠ مقال متخصص في الصحة، العقارات، الاقتصاد، والأمومة.",
+                exp_title_2: "خبير SEO",
+                exp_desc_2: "سجل حافل في تصدر المرتبة الأولى (Homes Jordan) وخبير في تحليل الـ SEO.",
+                exp_title_3: "رواية القصص البصرية",
+                exp_desc_3: "كتابة سيناريوهات الفيديوهات الاجتماعية عالية التأثير وإتقان Canva.",
+                exp_title_4: "فلسفة العمل",
+                exp_desc_4: "خبرة واسعة كموظفة وفريلانسر مع التزام تام بدقة المواعيد.",
+                projects_subtitle: "٠٢ / الأعمال",
+                projects_title_bg: "مجموعة",
+                projects_title_accent: "الأعمال",
+                exp_subtitle: "٠٣ / المسار",
+                exp_header_bg: "الخبرات",
+                exp_header_accent: "المهنية",
+                exp_date_1: "نوفمبر ٢٠٢٢ — الآن",
+                exp_item_1_role: "كاتبة محتوى إبداعي",
+                exp_item_1_desc: "إنشاء مقالات عقارية عالية الجودة، إجراء بحوث السوق، وتطبيق استراتيجيات SEO.",
+                exp_date_2: "فبراير ٢٠١٩ — يوليو ٢٠١٩",
+                exp_item_2_role: "محللة SEO وكاتبة محتوى",
+                exp_item_2_desc: "إنشاء برامج الهجرة وإجراء البحوث للمدونات وتطوير النصوص التسويقية.",
+                exp_date_3: "يناير ٢٠١٦ — مارس ٢٠١٨",
+                exp_item_3_role: "مسؤول رقمي أول",
+                exp_item_3_desc: "إدارة محتوى مواقع التجارة الإلكترونية عبر منصات OpenCart و Magento.",
+                exp_date_4: "فبراير ٢٠١٤ — أكتوبر ٢٠١٥",
+                exp_item_4_role: "أخصائية محتوى وتواصل اجتماعي",
+                exp_item_4_desc: "إدارة محتوى موقع 3eesho.com وإنتاج محتوى وسائط متعددة لشركة Mobily و Zain.",
+                exp_date_5: "فبراير ٢٠٠٧ — أكتوبر ٢٠١١",
+                exp_item_5_role: "مسؤول علاقات خدمة العملاء",
+                exp_item_5_desc: "القيام بالمهام الإدارية وعمليات علاقات العملاء في شركة Yahoo!Maktoob.",
+                footer_ready: "هل أنت جاهز للتواصل؟",
+                footer_collab_bg: "لنتعاون",
+                footer_collab_accent: "معاً",
+                footer_contact_details: "تفاصيل الاتصال",
+                footer_digital_presence: "التواجد الرقمي",
+                footer_quick_links: "روابط سريعة",
+                footer_location: "المقر",
+                location_base: "الأردن — عمان",
+                footer_rights: "© ٢٠٢٦ خلود محمد. جميع الحقوق محفوظة."
+            }
+        };
+
+        let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update Direction
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+
+            // Update Toggle Button Text
+            const langTexts = document.querySelectorAll('#lang-text, #lang-text-mobile');
+            langTexts.forEach(el => {
+                el.innerText = lang === 'en' ? 'AR' : 'EN';
+            });
+
+            currentLang = lang;
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        function toggleLanguage() {
+            const newLang = currentLang === 'en' ? 'ar' : 'en';
+            updateLanguage(newLang);
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateLanguage(currentLang);
+        });
+
         // Simple script to move the decorative cursor
         const cursor = document.getElementById('cursor');
         document.addEventListener('mousemove', (e) => {

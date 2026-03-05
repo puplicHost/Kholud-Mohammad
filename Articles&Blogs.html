@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Articles & Blogs | Kholud Mohammad</title>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&amp;family=Great+Vibes&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e6e6e6",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#0a0a0a",
+                        "surface-dark": "#191919",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif-bold": ["Playfair Display", "serif"],
+                        "script": ["Great Vibes", "cursive"],
+                        "arabic": ["Cairo", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        .section-header-line {
+            height: 1px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+        }
+
+        .hero-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+            background-size: 60px 60px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-primary transition-colors duration-300 hero-pattern">
+
+    <!-- Navigation -->
+    <header
+        class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 py-6 bg-background-dark md:bg-background-dark/80 backdrop-blur-xl border-b border-zinc-800">
+        <div class="flex items-center gap-4">
+            <h2 class="text-white text-xl font-black uppercase tracking-tight" data-i18n="header_name">KHOLUD MOHAMMAD
+            </h2>
+        </div>
+        <div class="flex items-center gap-6">
+            <!-- Language Toggle -->
+            <button onclick="toggleLanguage()"
+                class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-primary transition-all text-white">
+                <span class="material-symbols-outlined text-sm">language</span>
+                <span id="lang-text" class="text-[10px] font-bold uppercase tracking-widest">AR</span>
+            </button>
+
+            <a href="index.html"
+                class="group flex items-center gap-4 px-6 h-12 rounded-full border border-white/10 hover:border-primary transition-all duration-500 overflow-hidden relative text-white">
+                <span
+                    class="relative z-10 material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                <span class="relative z-10 text-[10px] font-bold uppercase tracking-[0.2em]"
+                    data-i18n="nav_home">Home</span>
+                <div
+                    class="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                </div>
+            </a>
+        </div>
+        <style>
+            .group:hover span {
+                color: #0a0a0a !important;
+            }
+        </style>
+    </header>
+
+    <!-- Content -->
+    <main class="min-h-screen pt-40 pb-24 px-6 md:px-16 max-w-[1440px] mx-auto">
+        <div class="mb-20">
+            <span class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-600 mb-4 block"
+                data-i18n="ab_subtitle">Selected
+                Archive</span>
+            <h1 class="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none text-white">
+                <span data-i18n="ab_title_main">Articles &</span> <span class="font-thin italic opacity-40"
+                    data-i18n="ab_title_accent">Blogs</span>
+            </h1>
+            <div class="section-header-line w-full mt-12"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
+            <!-- Article 1 -->
+            <div
+                class="group flex flex-col bg-white/[0.02] border border-white/5 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-white/[0.04] h-[600px]">
+                <div class="p-10 flex flex-col h-full">
+                    <span class="text-[10px] font-black uppercase tracking-[0.4em] text-primary/40 mb-4 block"
+                        data-i18n="ab_cat1">Intellectual Property</span>
+                    <h3 class="text-3xl font-bold text-white mb-6 leading-tight" data-i18n="ab_title1">For Small Project
+                        Owners.. How to Protect IP Rights?</h3>
+                    <div class="flex-1 overflow-hidden relative">
+                        <p class="text-zinc-400 text-lg leading-relaxed font-light mb-8 line-clamp-[8]"
+                            data-i18n="ab_desc1">
+                            No matter how small your project is, protecting its intellectual property rights is crucial!
+                            In addition to protecting intangible assets, attorney Anne Charlotte explains that projects
+                            that protect IP rights have 30% higher returns.
+                        </p>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent">
+                        </div>
+                    </div>
+                    <button onclick="openArticle(1)"
+                        class="mt-8 group/btn relative inline-flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-primary">
+                        <span data-i18n="ab_read_more">Read More</span>
+                        <span
+                            class="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover/btn:bg-primary group-hover/btn:text-black transition-all">
+                            <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div
+                class="group flex flex-col bg-white/[0.02] border border-white/5 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-white/[0.04] h-[600px]">
+                <div class="p-10 flex flex-col h-full">
+                    <span class="text-[10px] font-black uppercase tracking-[0.4em] text-primary/40 mb-4 block"
+                        data-i18n="ab_cat2">Entrepreneurship</span>
+                    <h3 class="text-3xl font-bold text-white mb-6 leading-tight" data-i18n="ab_title2">Humanitarian
+                        Entrepreneurship, a Step Towards Sustainable Development</h3>
+                    <div class="flex-1 overflow-hidden relative">
+                        <p class="text-zinc-400 text-lg leading-relaxed font-light mb-8 line-clamp-[8]"
+                            data-i18n="ab_desc2">
+                            "At the end of the day, people won't remember what you said or did, they will remember how
+                            you made them feel." Humanitarian entrepreneurship isn't voluntary, but it's not purely
+                            investment-based either. It aims to put humans first.
+                        </p>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent">
+                        </div>
+                    </div>
+                    <button onclick="openArticle(2)"
+                        class="mt-8 group/btn relative inline-flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-primary">
+                        <span data-i18n="ab_read_more">Read More</span>
+                        <span
+                            class="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover/btn:bg-primary group-hover/btn:text-black transition-all">
+                            <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div
+                class="group flex flex-col bg-white/[0.02] border border-white/5 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-white/[0.04] h-[600px]">
+                <div class="p-10 flex flex-col h-full">
+                    <span class="text-[10px] font-black uppercase tracking-[0.4em] text-primary/40 mb-4 block"
+                        data-i18n="ab_cat3">Economy</span>
+                    <h3 class="text-3xl font-bold text-white mb-6 leading-tight" data-i18n="ab_title3">Virus in the
+                        Barrel.. Pandemic and Oil Prices</h3>
+                    <div class="flex-1 overflow-hidden relative">
+                        <p class="text-zinc-400 text-lg leading-relaxed font-light mb-8 line-clamp-[8]"
+                            data-i18n="ab_desc3">
+                            The Corona pandemic has affected many economic sectors since March 2020, reaching the oil
+                            sector. Prices collapsed to their lowest levels due to global precautionary measures and
+                            lockdowns.
+                        </p>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent">
+                        </div>
+                    </div>
+                    <button onclick="openArticle(3)"
+                        class="mt-8 group/btn relative inline-flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-primary">
+                        <span data-i18n="ab_read_more">Read More</span>
+                        <span
+                            class="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover/btn:bg-primary group-hover/btn:text-black transition-all">
+                            <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div
+                class="group flex flex-col bg-white/[0.02] border border-white/5 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-white/[0.04] h-[600px]">
+                <div class="p-10 flex flex-col h-full">
+                    <span class="text-[10px] font-black uppercase tracking-[0.4em] text-primary/40 mb-4 block"
+                        data-i18n="ab_cat4">Global Affairs</span>
+                    <h3 class="text-3xl font-bold text-white mb-6 leading-tight" data-i18n="ab_title4">New World Order..
+                        Changed Titles and Swapped Roles</h3>
+                    <div class="flex-1 overflow-hidden relative">
+                        <p class="text-zinc-400 text-lg leading-relaxed font-light mb-8 line-clamp-[8]"
+                            data-i18n="ab_desc4">
+                            News headlines have changed, and global topics are now shared across nations. Concerns are
+                            unified around securing daily life. Is this generation different in its resilience?
+                        </p>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent">
+                        </div>
+                    </div>
+                    <button onclick="openArticle(4)"
+                        class="mt-8 group/btn relative inline-flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-primary">
+                        <span data-i18n="ab_read_more">Read More</span>
+                        <span
+                            class="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover/btn:bg-primary group-hover/btn:text-black transition-all">
+                            <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- External Publications Section -->
+        <div class="mt-40 mb-20">
+            <span class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-600 mb-4 block"
+                data-i18n="ab_ext_subtitle">Publications &
+                External Links</span>
+            <h2 class="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none text-white">
+                <span data-i18n="ab_ext_title_bg">More</span> <span class="font-thin italic opacity-40"
+                    data-i18n="ab_ext_title_accent">Collaborations</span>
+            </h2>
+            <div class="section-header-line w-full mt-12"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Link 1 -->
+            <a href="https://www.homes-jordan.com/ar/مقالات" target="_blank"
+                class="group flex flex-col p-8 bg-white/[0.02] border border-white/5 rounded-3xl transition-all duration-500 hover:bg-white/[0.05] hover:border-white/10">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 mb-4"
+                    data-i18n="ab_ext_brand1">Homes Jordan</span>
+                <h4 class="text-xl font-bold text-white mb-6 group-hover:text-primary transition-colors italic"
+                    data-i18n="ab_ext_link1">Real Estate Blog</h4>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="ab_view_pub">View
+                        Publication</span>
+                    <span
+                        class="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-all">
+                        <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Link 2 -->
+            <a href="https://www.thisisamman.com/ar/author/kholud_abul_asal" target="_blank"
+                class="group flex flex-col p-8 bg-white/[0.02] border border-white/5 rounded-3xl transition-all duration-500 hover:bg-white/[0.05] hover:border-white/10">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 mb-4"
+                    data-i18n="ab_ext_brand2">This is Amman</span>
+                <h4 class="text-xl font-bold text-white mb-6 group-hover:text-primary transition-colors italic"
+                    data-i18n="ab_ext_link2">Social Blog (Jordanian Dialect)</h4>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="ab_view_pub">View
+                        Publication</span>
+                    <span
+                        class="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-all">
+                        <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Link 3 -->
+            <a href="https://www.albawaba.com/ar/%D8%B5%D8%AD%D8%AA%D9%83%D9%90-%D9%88%D8%AC%D9%85%D8%A7%D9%84%D9%83%D9%90/%D8%A3%D9%8A%D9%86-%D8%A3%D9%86%D8%AA%D9%8E-%D9%85%D9%86-%D8%AD%D9%8A%D8%A7%D8%AA%D9%83-1223592"
+                target="_blank"
+                class="group flex flex-col p-8 bg-white/[0.02] border border-white/5 rounded-3xl transition-all duration-500 hover:bg-white/[0.05] hover:border-white/10">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 mb-4"
+                    data-i18n="ab_ext_brand3">Al Bawaba</span>
+                <h4 class="text-xl font-bold text-white mb-6 group-hover:text-primary transition-colors italic"
+                    data-i18n="ab_ext_link3">Miscellaneous Articles</h4>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="ab_view_pub">View
+                        Publication</span>
+                    <span
+                        class="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-all">
+                        <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Link 4 -->
+            <a href="https://www.albawaba.com/ar/%D8%B5%D8%AD%D8%AA%D9%83%D9%90-%D9%88%D8%AC%D9%85%D8%A7%D9%84%D9%83%D9%90/%D8%B9%D8%B2%D9%82%D8%AA%D9%8A-ezwitti-1167778"
+                target="_blank"
+                class="group flex flex-col p-8 bg-white/[0.02] border border-white/5 rounded-3xl transition-all duration-500 hover:bg-white/[0.05] hover:border-white/10">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 mb-4"
+                    data-i18n="ab_ext_brand3">Al Bawaba</span>
+                <h4 class="text-xl font-bold text-white mb-6 group-hover:text-primary transition-colors italic"
+                    data-i18n="ab_ext_link4">Field Article</h4>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="ab_view_pub">View
+                        Publication</span>
+                    <span
+                        class="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-all">
+                        <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Link 5 -->
+            <a href="https://reachimmigration.com/ar/%D8%A7%D9%84%D9%85%D8%AF%D9%88%D9%86%D8%A9/%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9-%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A%D8%A7/"
+                target="_blank"
+                class="group flex flex-col p-8 bg-white/[0.02] border border-white/5 rounded-3xl transition-all duration-500 hover:bg-white/[0.05] hover:border-white/10">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 mb-4"
+                    data-i18n="ab_ext_brand4">Reach Immigration</span>
+                <h4 class="text-xl font-bold text-white mb-6 group-hover:text-primary transition-colors italic"
+                    data-i18n="ab_ext_link5">Blog</h4>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="ab_view_pub">View
+                        Publication</span>
+                    <span
+                        class="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-all">
+                        <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Link 6 -->
+            <a href="https://reachimmigration.com/ar/%D8%A7%D9%84%D9%85%D8%AF%D9%88%D9%86%D8%A9/%D8%AF%D9%88%D9%84-%D8%AA%D9%85%D9%86%D8%AD-%D8%A7%D9%82%D8%A7%D9%85%D8%A9-%D8%A8%D8%B4%D8%B1%D8%A7%D8%A1-%D8%B9%D9%82%D8%A7%D8%B1/"
+                target="_blank"
+                class="group flex flex-col p-8 bg-white/[0.02] border border-white/5 rounded-3xl transition-all duration-500 hover:bg-white/[0.05] hover:border-white/10">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 mb-4"
+                    data-i18n="ab_ext_brand4">Reach Immigration</span>
+                <h4 class="text-xl font-bold text-white mb-6 group-hover:text-primary transition-colors italic"
+                    data-i18n="ab_ext_link6">Real Estate for Residence</h4>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="ab_view_pub">View
+                        Publication</span>
+                    <span
+                        class="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-all">
+                        <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Link 7 -->
+            <a href="https://reachimmigration.com/ar/program/%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AB%D9%85%D8%A7%D8%B1-%D1%81%D9%81-%D8%A7%D8%B3%D8%AA%D8%B1%D8%A7%D9%84%D9%8A%D8%A7-%D9%87%D8%AC%D8%B1%D8%A9-%D8%B1%D8%AC%D8%A7%D9%84-%D8%A7%D9%84%D8%A7%D8%B9%D9%85%D8%A7%D9%84-%D9%88-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%AB%D9%85%D8%B1%D9%8A%D9%86/"
+                target="_blank"
+                class="group flex flex-col p-8 bg-white/[0.02] border border-white/5 rounded-3xl transition-all duration-500 hover:bg-white/[0.05] hover:border-white/10">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 mb-4"
+                    data-i18n="ab_ext_brand4">Reach Immigration</span>
+                <h4 class="text-xl font-bold text-white mb-6 group-hover:text-primary transition-colors italic"
+                    data-i18n="ab_ext_link7">Migration Program</h4>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="ab_view_pub">View
+                        Publication</span>
+                    <span
+                        class="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-all">
+                        <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Link 8 -->
+            <a href="https://reachimmigration.com/ar/program/greece-investment-migration/%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d8%a7%d9%84%d8%a7%d8%b3%d8%aa%d8%ab%d9%85%d8%a7%d8%b1-%d8%a7%d9%84%d8%b9%d9%82%d8%a7%d8%b1%d9%8a-%d9%84%d9%84%d8%ad%d8%b5%d9%88%d9%84-%d8%b9%d9%84%d9%89-%d8%a7%d9%84%d8%a5%d9%82%d8%a7%d9%85%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d9%8a%d9%88%d9%86%d8%a7%d9%86-%d8%a7%d9%84%d8%aa%d8%a3%d8%b4%d9%8a%d8%b1%d8%a9-%d8%a7%d9%84%d8%b0%d9%87%d8%a8%d9%8a%d8%a9/"
+                target="_blank"
+                class="group flex flex-col p-8 bg-white/[0.02] border border-white/5 rounded-3xl transition-all duration-500 hover:bg-white/[0.05] hover:border-white/10">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 mb-4"
+                    data-i18n="ab_ext_brand4">Reach Immigration</span>
+                <h4 class="text-xl font-bold text-white mb-6 group-hover:text-primary transition-colors italic"
+                    data-i18n="ab_ext_link8">Golden Visa Greece</h4>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="ab_view_pub">View
+                        Publication</span>
+                    <span
+                        class="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-all">
+                        <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                    </span>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- Modal for Full Article -->
+    <div id="article-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 md:p-12">
+        <div class="absolute inset-0 bg-black/95 backdrop-blur-2xl" onclick="closeArticle()"></div>
+        <div class="relative bg-background-dark border border-white/10 w-full max-w-4xl max-h-[85vh] overflow-y-auto rounded-3xl p-8 md:p-16 text-right shadow-2xl"
+            dir="rtl">
+            <button onclick="closeArticle()"
+                class="sticky top-0 float-left bg-zinc-900 size-12 rounded-full flex items-center justify-center text-zinc-400 hover:text-white transition-colors z-20 border border-white/10">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+            <div id="modal-content" class="mt-8">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const articles = {
+            en: {
+                1: {
+                    title: "For Small Project Owners.. How to Protect IP Rights?",
+                    category: "Intellectual Property",
+                    content: `<p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>Protecting intellectual property (IP) is crucial for any project, no matter its size. IP rights safeguard intangible assets and allow business owners to benefit from their innovations. Studies show that projects investing in IP protection have 30% higher returns.</p>
+                    <h4 class='text-2xl font-bold text-white mb-4'>What is Intellectual Property?</h4>
+                    <p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>Intangible assets created by the mind, including copyrights (literary and artistic works), industrial property, and geographical indications.</p>
+                    <p class='text-primary text-2xl font-bold border-t border-white/10 pt-8 mt-8'>With these steps, your project's path to growth is secured.</p>`
+                },
+                2: {
+                    title: "Humanitarian Entrepreneurship, a Step Towards Sustainable Development",
+                    category: "Entrepreneurship",
+                    content: `<p class='text-zinc-400 text-lg leading-relaxed font-light mb-8 italic border-l-4 border-primary/20 pl-6 ml-2'>"At the end of the day, people won't remember what you said or did, they will remember how you made them feel."</p>
+                    <p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>This powerful quote by Maya Angelou resonates deeply in the world of humanitarian entrepreneurship. It's not just about civil rights; it extends to how businesses interact with the community.</p>
+                    <h4 class='text-2xl font-bold text-white mb-4'>Defining the Concept</h4>
+                    <p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>Humanitarian entrepreneurship is not purely voluntary, nor is it strictly investment-driven. It's a hybrid that puts human value at the center of economic growth, ensuring sustainable development for both the business and the society.</p>`
+                },
+                3: {
+                    title: "Virus in the Barrel.. Pandemic and Oil Prices",
+                    category: "Economy",
+                    content: `<p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>The COVID-19 pandemic significantly impacted global economic sectors, particularly the oil industry. Prices plummeted as global lockdowns reduced demand to historic lows.</p>
+                    <h4 class='text-2xl font-bold text-white mb-4'>Market Volatility</h4>
+                    <p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>By March 2020, oil prices reached their lowest levels in 18 years. This article explores the factors behind this collapse and the subsequent recovery efforts by major oil-producing nations.</p>`
+                },
+                4: {
+                    title: "New World Order.. Changed Titles and Swapped Roles",
+                    category: "Global Affairs",
+                    content: `<p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>As the world enters a new era, global narratives are shifting. Headlines that once dominated for decades are being replaced by new concerns, shared across borders through digital connectivity.</p>
+                    <h4 class='text-2xl font-bold text-white mb-4'>A Shifting Landscape</h4>
+                    <p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>From the digital transformation of the workplace to unified global health concerns, we are witnessing a fundamental change in how the "New World Order" is perceived and managed.</p>`
+                }
+            },
+            ar: {
+                1: {
+                    title: "لصاحبة المشروع الصغير .. كيف تحمي حقوق الملكية الفكرية؟",
+                    category: "الملكية الفكرية",
+                    content: `<p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>مهما كان مشروعك الخاص صغيرا فإن حماية حقوق ملكيته الفكرية مهم جدا ولا يستهان به! فـ بالإضافة إلى أن حقوق الملكية الفكرية تحمي الأصول الغير الملموسة لهذا المشروع وتسمح له بالإستفادة من الإبداعات والإبتكارات التي يتضمنها؛ فإن المحامية "آن شارلوت" توضح وبناء على عدة دراسات أن المشاريع التي تستثمر وتحمي حقوق ملكيتها الفكرية لديها عائدات أعلى ب 30٪ من المشاريع الأخرى!</p>
+                    <h4 class='text-2xl font-bold text-white mb-4'>ما هي الملكية الفكرية؟</h4>
+                    <p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>هي الأصول الغير ملموسة والتي يتم إنشاؤها من خلال الفكر وتشمل ملكية حقوق التأليف والنشر، الأعمال الأدبية والفنية، الملكية الصناعية والمؤشرات الجغرافية.</p>
+                    <p class='text-primary text-2xl font-bold border-t border-white/10 pt-8 mt-8'>طالما أن جميع المعطيات الآن بين يديكِ فإن الطريق مفتوح لك لتمتلكي مشروعك الخاص بكل قوة.</p>`
+                },
+                2: {
+                    title: "ريادة الأعمال الإنسانية، خطوة نحو التنمية المستدامة في المجتمع",
+                    category: "ريادة الأعمال",
+                    content: `<p class='text-zinc-400 text-lg leading-relaxed font-light mb-8 italic border-r-4 border-primary/20 pr-6 mr-2'>"في نهاية اليوم ، لن يتذكر الناس ما قلته أو فعلته، وسيتذكرون كيف جعلتهم يشعرون"</p>
+                    <p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>هذا ما قالته مايا أنجيلو الكاتبة الأمريكية والناشطة في الحقوق المدنية في مذكراتها ( I Know Why The Caged Bird Sings)! فهل ما قالته مايا أنجيلو مُقتصرٌ فقط على الحقوق المدنية والإنسانية؟ أو أنه يتخطّاها إلى مجال الأعمال وريادة الأعمال؟ دعونا نكشف لكم بعض الخفايا في ريادة الأعمال المجتمعية والإنسانية.</p>`
+                },
+                3: {
+                    title: "فايروسٌ في البرميل .. عن الجائحة وأسعارُ النفط",
+                    category: "اقتصاد",
+                    content: `<p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>أثّرت جائحةُ كورونا، منذ بدايتها مارس ٢٠٢٠ على كثيرٍ من القطّاعات الاقتصاديّة، وطالتْ واحداً من أهم القطاعات المتحكّمة في العالم، وهو قطّاع النفط.</p>`
+                },
+                4: {
+                    title: "مع دخول العالم نظام عالمي جديد.. تغيّرت العناوين وتبدلت الأدوار",
+                    category: "شؤون عالمية",
+                    content: `<p class='text-zinc-400 text-lg leading-relaxed font-light mb-8'>تغيّرت عناوين الأخبار، وأصبحت نقاشات المواضيع الرائجة على شبكات التواصل الاجتماعي مشتركة بين شعوب العالم، وباتت المخاوف مُوّحدة، بينما الأهداف تحوم حول تأمين قوت الحياة اليومي!</p>`
+                }
+            }
+        };
+
+        function openArticle(id) {
+            const article = articles[currentLang][id];
+            const modal = document.getElementById('article-modal');
+            const content = document.getElementById('modal-content');
+
+            content.innerHTML = `
+                <div class="${currentLang === 'ar' ? 'font-arabic' : ''} animate-in fade-in slide-in-from-bottom-4 duration-700" dir="${currentLang === 'ar' ? 'rtl' : 'ltr'}">
+                    <span class="text-[10px] font-black uppercase tracking-[0.5em] text-primary/40 mb-4 block">${article.category}</span>
+                    <h2 class="text-4xl md:text-6xl font-black text-white mb-12 tracking-tighter leading-none">${article.title}</h2>
+                    <div class="h-px w-full bg-white/10 mb-12"></div>
+                    <div class="max-w-3xl mx-auto">
+                        ${article.content}
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeArticle() {
+            const modal = document.getElementById('article-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-900 text-white py-24 px-6 lg:px-20 overflow-hidden relative">
+        <div
+            class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2">
+        </div>
+        <div class="max-w-[1440px] mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20 border-b border-white/10 pb-20">
+                <div class="lg:col-span-12">
+                    <span class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-500 mb-6 block"
+                        data-i18n="footer_ready">Ready to
+                        Connect?</span>
+                    <h2 class="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none mb-12">
+                        <span data-i18n="footer_collab_bg">LET'S</span> <span
+                            class="font-thin italic opacity-40 text-background-light"
+                            data-i18n="footer_collab_accent">Collaborate</span>
+                    </h2>
+                </div>
+            </div>
+            <div
+                class="flex flex-col md:flex-row justify-between items-center text-[10px] font-mono text-zinc-500 uppercase tracking-widest gap-8">
+                <p data-i18n="footer_rights">© 2026 KHOLUD MOHAMMAD. ALL RIGHTS RESERVED.</p>
+                <div class="flex gap-8">
+                    <span data-i18n="footer_service_1">Content Strategy</span>
+                    <span>/</span>
+                    <span data-i18n="footer_service_2">Arabic Copywriting</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                header_name: "KHOLUD MOHAMMAD",
+                nav_home: "Home",
+                footer_ready: "Ready to Connect?",
+                footer_collab_bg: "LET'S",
+                footer_collab_accent: "Collaborate",
+                footer_rights: "© 2026 KHOLUD MOHAMMAD. ALL RIGHTS RESERVED.",
+                footer_service_1: "Content Strategy",
+                footer_service_2: "Arabic Copywriting",
+                ab_subtitle: "Selected Archive",
+                ab_title_main: "Articles &",
+                ab_title_accent: "Blogs",
+                ab_read_more: "Read More",
+                ab_ext_subtitle: "Publications & External Links",
+                ab_ext_title_bg: "More",
+                ab_ext_title_accent: "Collaborations",
+                ab_view_pub: "View Publication",
+                ab_cat1: "Intellectual Property",
+                ab_cat2: "Entrepreneurship",
+                ab_cat3: "Economy",
+                ab_cat4: "Global Affairs",
+                ab_title1: "For Small Project Owners.. How to Protect IP Rights?",
+                ab_title2: "Humanitarian Entrepreneurship, a Step Towards Sustainable Development",
+                ab_title3: "Virus in the Barrel.. Pandemic and Oil Prices",
+                ab_title4: "New World Order.. Changed Titles and Swapped Roles",
+                ab_desc1: "No matter how small your project is, protecting its intellectual property rights is crucial!",
+                ab_desc2: "Humanitarian entrepreneurship aims to put humans first, moving beyond pure investment.",
+                ab_desc3: "The impact of the pandemic on global oil prices and economic stability.",
+                ab_desc4: "A look at the shifting global order and the changing roles of nations.",
+                ab_ext_brand1: "Homes Jordan",
+                ab_ext_brand2: "This is Amman",
+                ab_ext_brand3: "Al Bawaba",
+                ab_ext_brand4: "Reach Immigration",
+                ab_ext_link1: "Real Estate Blog",
+                ab_ext_link2: "Social Blog (Jordanian Dialect)",
+                ab_ext_link3: "Miscellaneous Articles",
+                ab_ext_link4: "Field Article",
+                ab_ext_link5: "Immigration Blog",
+                ab_ext_link6: "Real Estate Immigration",
+                ab_ext_link7: "Immigration Program",
+                ab_ext_link8: "Greek Golden Visa"
+            },
+            ar: {
+                header_name: "خلود محمد",
+                nav_home: "الرئيسية",
+                footer_ready: "هل أنت جاهز للتواصل؟",
+                footer_collab_bg: "لنتعاون",
+                footer_collab_accent: "معاً",
+                footer_rights: "© ٢٠٢٦ خلود محمد. جميع الحقوق محفوظة.",
+                footer_service_1: "استراتيجية المحتوى",
+                footer_service_2: "كتابة المحتوى العربي",
+                ab_subtitle: "الأرشيف المختار",
+                ab_title_main: "المقالات و",
+                ab_title_accent: "المدونات",
+                ab_read_more: "اقرأ المزيد",
+                ab_ext_subtitle: "المنشورات والروابط الخارجية",
+                ab_ext_title_bg: "مزيد من",
+                ab_ext_title_accent: "التعاون",
+                ab_view_pub: "عرض المنشور",
+                ab_cat1: "الملكية الفكرية",
+                ab_cat2: "ريادة الأعمال",
+                ab_cat3: "اقتصاد",
+                ab_cat4: "شؤون عالمية",
+                ab_title1: "لصاحبة المشروع الصغير .. كيف تحمي حقوق الملكية الفكرية؟",
+                ab_title2: "ريادة الأعمال الإنسانية، خطوة نحو التنمية المستدامة في المجتمع",
+                ab_title3: "فايروسٌ في البرميل .. عن الجائحة وأسعارُ النفط",
+                ab_title4: "مع دخول العالم نظام عالمي جديد.. تغيّرت العناوين وتبدلت الأدوار",
+                ab_desc1: "مهما كان مشروعك الخاص صغيرا فإن حماية حقوق ملكيته الفكرية مهم جدا ولا يستهان به!",
+                ab_desc2: "ريادة الأعمال الإنسانية تهدف إلى وضع الإنسان في أولى اهتماماتها وإيلاء العناية له.",
+                ab_desc3: "تأثير جائحة كورونا على قطاع النفط العالمي وتقلبات الأسعار.",
+                ab_desc4: "نظرة على التغيرات في النظام العالمي وتبادل الأدوار بين الدول.",
+                ab_ext_brand1: "Homes Jordan",
+                ab_ext_brand2: "This is Amman",
+                ab_ext_brand3: "البوابة",
+                ab_ext_brand4: "Reach Immigration",
+                ab_ext_link1: "مدونة عقارية",
+                ab_ext_link2: "مدونة اجتماعية خفيفة (باللهجة المحكية)",
+                ab_ext_link3: "مقالات متفرقة",
+                ab_ext_link4: "مقال ميداني",
+                ab_ext_link5: "مدونة الهجرة",
+                ab_ext_link6: "مدونة عقارية للهجرة",
+                ab_ext_link7: "برنامج هجرة",
+                ab_ext_link8: "التأشيرة الذهبية اليونانية"
+            }
+        };
+
+        let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+
+            const langTexts = document.querySelectorAll('#lang-text');
+            langTexts.forEach(el => {
+                el.innerText = lang === 'en' ? 'AR' : 'EN';
+            });
+
+            currentLang = lang;
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        function toggleLanguage() {
+            const newLang = currentLang === 'en' ? 'ar' : 'en';
+            updateLanguage(newLang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateLanguage(currentLang);
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Videos | Kholud Mohammad</title>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Great+Vibes&family=Manrope:wght@200;300;400;500;600;700;800&family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e6e6e6",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#0a0a0a",
+                        "surface-dark": "#191919",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif-bold": ["Playfair Display", "serif"],
+                        "script": ["Great Vibes", "cursive"],
+                        "arabic": ["Cairo", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        .section-header-line {
+            height: 1px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+        }
+
+        .hero-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+            background-size: 60px 60px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-primary transition-colors duration-300 hero-pattern">
+
+    <!-- Navigation -->
+    <header
+        class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 py-6 bg-background-dark md:bg-background-dark/80 backdrop-blur-xl border-b border-zinc-800">
+        <div class="flex items-center gap-4">
+            <h2 class="text-white text-xl font-black uppercase tracking-tight" data-i18n="header_name">KHOLUD MOHAMMAD
+            </h2>
+        </div>
+        <div class="flex items-center gap-6">
+            <!-- Language Toggle -->
+            <button onclick="toggleLanguage()"
+                class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-primary transition-all text-white">
+                <span class="material-symbols-outlined text-sm">language</span>
+                <span id="lang-text" class="text-[10px] font-bold uppercase tracking-widest">AR</span>
+            </button>
+
+            <a href="index.html"
+                class="group flex items-center gap-4 px-6 h-12 rounded-full border border-white/10 hover:border-primary transition-all duration-500 overflow-hidden relative text-white">
+                <span
+                    class="relative z-10 material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                <span class="relative z-10 text-[10px] font-bold uppercase tracking-[0.2em]"
+                    data-i18n="nav_home">Home</span>
+                <div
+                    class="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                </div>
+            </a>
+        </div>
+        <style>
+            .group:hover span {
+                color: #0a0a0a !important;
+            }
+        </style>
+    </header>
+
+    <!-- Content -->
+    <main class="min-h-screen pt-40 pb-24 px-6 md:px-16 max-w-[1440px] mx-auto">
+        <div class="mb-20">
+            <span class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-600 mb-4 block"
+                data-i18n="v_subtitle">Motion
+                Storytelling</span>
+            <h1 class="text-7xl md:text-[10vw] font-black tracking-tighter uppercase leading-none text-white">
+                <span data-i18n="v_title_bg">Videos</span> <span class="font-thin italic opacity-40"
+                    data-i18n="v_title_accent">Scripts</span>
+            </h1>
+            <div class="section-header-line w-full mt-12"></div>
+        </div>
+
+        <!-- Local Productions Section -->
+        <div class="mb-24">
+            <h2 class="text-xl font-black uppercase tracking-[0.3em] text-zinc-500 mb-12" data-i18n="v_local_header">
+                Local Productions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Video 1 -->
+                <div class="group flex flex-col gap-8">
+                    <div
+                        class="aspect-video rounded-3xl overflow-hidden bg-zinc-900 border border-white/5 relative bg-black">
+                        <video class="w-full h-full object-contain relative z-10" controls playsinline
+                            preload="metadata">
+                            <source src="my_work/Videos/mood.3gp" type="video/3gpp">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="px-2">
+                        <h3 class="text-2xl font-bold text-white mb-2" data-i18n="v_mood_title">Mood Production</h3>
+                        <p class="text-zinc-500 text-sm font-light uppercase tracking-widest" data-i18n="v_mood_desc">
+                            Internal Project /
+                            Production</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="group flex flex-col gap-8">
+                    <div
+                        class="aspect-video rounded-3xl overflow-hidden bg-zinc-900 border border-white/5 relative bg-black">
+                        <video class="w-full h-full object-contain relative z-10" controls playsinline
+                            preload="metadata">
+                            <source src="my_work/Videos/العمل المكتبي والوزن - العراق.3gp" type="video/3gpp">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="px-2">
+                        <h3 class="text-2xl font-bold text-white mb-2" data-i18n="v_iraq_title">العمل المكتبي والوزن
+                        </h3>
+                        <p class="text-zinc-500 text-sm font-light uppercase tracking-widest" data-i18n="v_iraq_desc">
+                            Health Education
+                            / Iraq</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scriptwriting Portfolio Section -->
+        <div>
+            <h2 class="text-xl font-black uppercase tracking-[0.3em] text-zinc-500 mb-12"
+                data-i18n="v_portfolio_header">Scriptwriting Portfolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div
+                    class="group bg-white/[0.02] border border-white/5 rounded-3xl p-8 hover:bg-white/[0.04] transition-all duration-500 flex flex-col h-full">
+                    <span class="text-[9px] font-black text-primary/40 uppercase tracking-[0.3em] mb-4 block"
+                        data-i18n="v_cat_health">Health &
+                        Diet</span>
+                    <h3 class="text-xl font-bold text-white mb-6" data-i18n="v_client_ruba">د.ربى مشربش / Reach SN</h3>
+                    <div class="mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
+                        <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">Reach SN</span>
+                        <a href="https://youtu.be/OX8BycUSJII?si=qlXSUdldRR71xLm" target="_blank"
+                            class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
+                            <span data-i18n="v_btn_script">View Script</span>
+                            <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div
+                    class="group bg-white/[0.02] border border-white/5 rounded-3xl p-8 hover:bg-white/[0.04] transition-all duration-500 flex flex-col h-full">
+                    <span class="text-[9px] font-black text-primary/40 uppercase tracking-[0.3em] mb-4 block"
+                        data-i18n="v_cat_health">Health &
+                        Diet</span>
+                    <h3 class="text-xl font-bold text-white mb-6" data-i18n="v_client_ruba">د.ربى مشربش / Reach SN</h3>
+                    <div class="mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
+                        <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">Reach SN</span>
+                        <a href="https://youtu.be/86af1lISK-w?si=CVWbYQ9BPa7zFen-" target="_blank"
+                            class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
+                            <span data-i18n="v_btn_script">View Script</span>
+                            <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div
+                    class="group bg-white/[0.02] border border-white/5 rounded-3xl p-8 hover:bg-white/[0.04] transition-all duration-500 flex flex-col h-full">
+                    <span class="text-[9px] font-black text-primary/40 uppercase tracking-[0.3em] mb-4 block"
+                        data-i18n="v_cat_advice">Social -
+                        Advice</span>
+                    <h3 class="text-xl font-bold text-white mb-6" data-i18n="v_client_quartz">Quartz Media Production
+                    </h3>
+                    <div class="mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
+                        <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">Quartz Media</span>
+                        <a href="https://youtube.com/playlist?list=PLd3k53xqhVXzYAj8UEl5BhFbc7YV6_kvt&si=15LECsBI3WW4Obhf"
+                            target="_blank"
+                            class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
+                            <span data-i18n="v_btn_series">View Series</span>
+                            <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div
+                    class="group bg-white/[0.02] border border-white/5 rounded-3xl p-8 hover:bg-white/[0.04] transition-all duration-500 flex flex-col h-full">
+                    <span class="text-[9px] font-black text-primary/40 uppercase tracking-[0.3em] mb-4 block"
+                        data-i18n="v_cat_social">Social</span>
+                    <h3 class="text-xl font-bold text-white mb-6" data-i18n="v_client_quartz">Quartz Media Production
+                    </h3>
+                    <div class="mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
+                        <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">Quartz Media</span>
+                        <a href="https://youtube.com/playlist?list=PLd3k53xqhVXxhY5t21VjhbB2XEXsHfdg8&si=vZqVDugZ98tBrKsp"
+                            target="_blank"
+                            class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
+                            <span data-i18n="v_btn_series">View Series</span>
+                            <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div
+                    class="group bg-white/[0.02] border border-white/5 rounded-3xl p-8 hover:bg-white/[0.04] transition-all duration-500 flex flex-col h-full">
+                    <span class="text-[9px] font-black text-primary/40 uppercase tracking-[0.3em] mb-4 block"
+                        data-i18n="v_cat_info">Informative</span>
+                    <h3 class="text-xl font-bold text-white mb-6" data-i18n="v_client_master">Master Ads</h3>
+                    <div class="mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
+                        <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">Master Ads</span>
+                        <a href="https://youtu.be/dzQQBQaCqBE?si=pXsfpcNuRQHgROpD" target="_blank"
+                            class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
+                            <span data-i18n="v_btn_script">View Script</span>
+                            <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div
+                    class="group bg-white/[0.02] border border-white/5 rounded-3xl p-8 hover:bg-white/[0.04] transition-all duration-500 flex flex-col h-full">
+                    <span class="text-[9px] font-black text-primary/40 uppercase tracking-[0.3em] mb-4 block"
+                        data-i18n="v_cat_info">Informative</span>
+                    <h3 class="text-xl font-bold text-white mb-6" data-i18n="v_client_master">Master Ads</h3>
+                    <div class="mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
+                        <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">Master Ads</span>
+                        <a href="https://youtu.be/hxnLyqFUkE8?si=t3Wu5cSKwjGUauj7" target="_blank"
+                            class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
+                            <span data-i18n="v_btn_script">View Script</span>
+                            <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div
+                    class="group bg-white/[0.02] border border-white/5 rounded-3xl p-8 hover:bg-white/[0.04] transition-all duration-500 flex flex-col h-full">
+                    <span class="text-[9px] font-black text-primary/40 uppercase tracking-[0.3em] mb-4 block"
+                        data-i18n="v_cat_mental">Mental
+                        Health</span>
+                    <h3 class="text-xl font-bold text-white mb-6" data-i18n="v_client_master">Master Ads</h3>
+                    <div class="mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
+                        <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">Master Ads</span>
+                        <a href="https://youtu.be/DcsJsA4cuD0?si=U84M7fgYRJW_o0pe" target="_blank"
+                            class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
+                            <span data-i18n="v_btn_script">View Script</span>
+                            <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-900 text-white py-24 px-6 lg:px-20 overflow-hidden relative">
+        <div
+            class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2">
+        </div>
+        <div class="max-w-[1440px] mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20 border-b border-white/10 pb-20">
+                <div class="lg:col-span-12">
+                    <span class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-500 mb-6 block"
+                        data-i18n="footer_ready">Ready to
+                        Connect?</span>
+                    <h2 class="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none mb-12">
+                        <span data-i18n="footer_collab_bg">LET'S</span> <span
+                            class="font-thin italic opacity-40 text-background-light"
+                            data-i18n="footer_collab_accent">Collaborate</span>
+                    </h2>
+                </div>
+            </div>
+            <div
+                class="flex flex-col md:flex-row justify-between items-center text-[10px] font-mono text-zinc-500 uppercase tracking-widest gap-8">
+                <p data-i18n="footer_rights">© 2026 KHOLUD MOHAMMAD. ALL RIGHTS RESERVED.</p>
+                <div class="flex gap-8">
+                    <span data-i18n="footer_service_1">Content Strategy</span>
+                    <span>/</span>
+                    <span data-i18n="footer_service_2">Arabic Copywriting</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                header_name: "KHOLUD MOHAMMAD",
+                nav_home: "Home",
+                footer_ready: "Ready to Connect?",
+                footer_collab_bg: "LET'S",
+                footer_collab_accent: "Collaborate",
+                footer_rights: "© 2026 KHOLUD MOHAMMAD. ALL RIGHTS RESERVED.",
+                footer_service_1: "Content Strategy",
+                footer_service_2: "Arabic Copywriting",
+                v_subtitle: "Motion Storytelling",
+                v_title_bg: "Videos",
+                v_title_accent: "Scripts",
+                v_local_header: "Local Productions",
+                v_portfolio_header: "Scriptwriting Portfolio",
+                v_mood_title: "Mood Production",
+                v_mood_desc: "Internal Project / Production",
+                v_iraq_title: "Office Work & Weight",
+                v_iraq_desc: "Health Education / Iraq",
+                v_cat_health: "Health & Diet",
+                v_cat_social: "Social",
+                v_cat_advice: "Social - Advice",
+                v_cat_info: "Informative",
+                v_cat_mental: "Mental Health",
+                v_btn_script: "View Script",
+                v_btn_series: "View Series",
+                v_client_ruba: "Dr. Ruba Masharbash / Reach SN",
+                v_client_quartz: "Quartz Media Production",
+                v_client_master: "Master Ads"
+            },
+            ar: {
+                header_name: "خلود محمد",
+                nav_home: "الرئيسية",
+                footer_ready: "هل أنت جاهز للتواصل؟",
+                footer_collab_bg: "لنتعاون",
+                footer_collab_accent: "معاً",
+                footer_rights: "© ٢٠٢٦ خلود محمد. جميع الحقوق محفوظة.",
+                footer_service_1: "استراتيجية المحتوى",
+                footer_service_2: "كتابة المحتوى العربي",
+                v_subtitle: "رواية القصص المتحركة",
+                v_title_bg: "نصوص",
+                v_title_accent: "الفيديو",
+                v_local_header: "الإنتاجات المحلية",
+                v_portfolio_header: "معرض أعمال كتابة السيناريو",
+                v_mood_title: "إنتاج موود (Mood)",
+                v_mood_desc: "مشروع داخلي / إنتاج",
+                v_iraq_title: "العمل المكتبي والوزن",
+                v_iraq_desc: "توعية صحية / العراق",
+                v_cat_health: "الصحة والنظام الغذائي",
+                v_cat_social: "اجتماعي",
+                v_cat_advice: "اجتماعي - نصائح",
+                v_cat_info: "معلوماتي",
+                v_cat_mental: "الصحة النفسية",
+                v_btn_script: "عرض السيناريو",
+                v_btn_series: "عرض السلسلة",
+                v_client_ruba: "د. ربى مشربش / Reach SN",
+                v_client_quartz: "كوارتز للإنتاج الإعلامي",
+                v_client_master: "ماستر آدز (Master Ads)"
+            }
+        };
+
+        let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+
+            const langTexts = document.querySelectorAll('#lang-text');
+            langTexts.forEach(el => {
+                el.innerText = lang === 'en' ? 'AR' : 'EN';
+            });
+
+            currentLang = lang;
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        function toggleLanguage() {
+            const newLang = currentLang === 'en' ? 'ar' : 'en';
+            updateLanguage(newLang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateLanguage(currentLang);
+        });
+    </script>
+
+</body>
+
+</html>
