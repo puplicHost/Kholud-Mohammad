@@ -4,16 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Social Media | Kholud Mohammad</title>
+    <title>Social Media Campaigns | Kholud Mohammad</title>
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Great+Vibes&family=Manrope:wght@200;300;400;500;600;700;800&family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Tajawal:wght@200;300;400;500;700;800;900&family=Playfair+Display:ital,wght@0,900;1,900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- Tailwind Config -->
     <script>
@@ -22,15 +18,14 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#e6e6e6",
-                        "background-light": "#f7f7f7",
-                        "background-dark": "#0a0a0a",
-                        "surface-dark": "#191919",
+                        "primary": "#ffffff",
+                        "background-light": "#000000",
+                        "background-dark": "#000000",
+                        "surface-dark": "#000000",
                     },
                     fontFamily: {
                         "display": ["Manrope", "sans-serif"],
                         "serif-bold": ["Playfair Display", "serif"],
-                        "script": ["Great Vibes", "cursive"],
                         "arabic": ["Cairo", "sans-serif"]
                     },
                 },
@@ -39,294 +34,330 @@
     </script>
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .cairo-font {
+            font-family: 'Cairo', 'Tajawal', sans-serif !important;
+        }
+
+        html[dir="rtl"] body {
+            font-family: 'Cairo', 'Tajawal', 'Manrope', sans-serif !important;
+        }
+        
+        html[dir="ltr"] body {
+            font-family: 'Manrope', sans-serif !important;
+        }
+
         .section-header-line {
             height: 1px;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+            background: linear-gradient(to right, #d4af37, transparent);
         }
 
         .hero-pattern {
-            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
-            background-size: 60px 60px;
+            background-image: radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.025) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        html[dir="rtl"] .whatsapp-float {
+            right: auto;
+            left: 2rem;
+        }
+
+        /* Force pure black background and white text globally */
+        html, body, section, main, header, footer, nav, .bg-white, .bg-zinc-900, .bg-zinc-800, .bg-zinc-950, .bg-zinc-50, .bg-zinc-100, .dark\:bg-surface-dark {
+            background-color: #000000 !important;
+            background-image: none !important;
+        }
+        
+        *, h1, h2, h3, h4, h5, h6, p, span, a, li, label, input, textarea, select, button {
+            color: #ffffff !important;
+        }
+
+        /* Ensure input fields have readable borders and text */
+        input, textarea {
+            border-bottom-color: rgba(255, 255, 255, 0.3) !important;
+            color: #ffffff !important;
+            background-color: transparent !important;
+        }
+
+        /* Disable all hover visual effects, transformations, scale, and color shifts */
+        *:hover {
+            transform: none !important;
+            transition: none !important;
+            background-color: #000000 !important;
+            color: #ffffff !important;
+        }
+
+        /* Keep WhatsApp Floating button brand colors */
+        .whatsapp-float, .whatsapp-float * {
+            background-color: #22c55e !important;
+            color: #ffffff !important;
         }
     </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-primary transition-colors duration-300 hero-pattern">
+<body class="bg-black text-white transition-colors duration-500 hero-pattern min-h-screen flex flex-col justify-between overflow-x-hidden">
 
     <!-- Navigation -->
-    <header
-        class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 py-6 bg-background-dark md:bg-background-dark/80 backdrop-blur-xl border-b border-zinc-800">
+    <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 py-6 bg-white/95 dark:bg-background-dark/95 backdrop-blur-xl border-b border-zinc-200/50 dark:border-zinc-800/50 transition-colors">
         <div class="flex items-center gap-4">
-            <h2 class="text-white text-xl font-black uppercase tracking-tight" data-i18n="header_name">KHOLUD MOHAMMAD
-            </h2>
+            <h2 class="text-zinc-900 dark:text-white text-lg font-black uppercase tracking-tight" data-i18n="header_name">KHOLUD MOHAMMAD</h2>
         </div>
         <div class="flex items-center gap-6">
             <!-- Language Toggle -->
-            <button onclick="toggleLanguage()"
-                class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-primary transition-all text-white">
+            <button onclick="toggleLanguage()" class="flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-primary transition-all text-zinc-900 dark:text-white bg-white/50 dark:bg-white/[0.02]">
                 <span class="material-symbols-outlined text-sm">language</span>
                 <span id="lang-text" class="text-[10px] font-bold uppercase tracking-widest">AR</span>
             </button>
 
-            <a href="index.html"
-                class="group flex items-center gap-4 px-6 h-12 rounded-full border border-white/10 hover:border-primary transition-all duration-500 overflow-hidden relative text-white">
-                <span
-                    class="relative z-10 material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_back</span>
-                <span class="relative z-10 text-[10px] font-bold uppercase tracking-[0.2em]"
-                    data-i18n="nav_home">Home</span>
-                <div
-                    class="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                </div>
+            <a href="index.html" class="group flex items-center gap-3 px-6 h-12 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-white/[0.02] hover:border-primary transition-all duration-500 overflow-hidden relative text-zinc-900 dark:text-white">
+                <span class="relative z-10 material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                <span class="relative z-10 text-[10px] font-bold uppercase tracking-[0.2em]" data-i18n="nav_home">Home</span>
+                <div class="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
             </a>
         </div>
-        <style>
-            .group:hover span {
-                color: #0a0a0a !important;
-            }
-        </style>
     </header>
 
-    <!-- Content -->
-    <main class="min-h-screen pt-40 pb-24 px-6 md:px-16 max-w-[1440px] mx-auto">
+    <!-- Main Content -->
+    <main class="w-full flex-grow pt-40 pb-24 px-6 md:px-16 max-w-[1440px] mx-auto">
+        <!-- Hero Header -->
         <div class="mb-20">
-            <span class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-600 mb-4 block"
-                data-i18n="sm_subtitle">Viral
-                Narratives</span>
-            <h1 class="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none text-white">
-                <span data-i18n="sm_title_main">Social</span> <span class="font-thin italic opacity-40"
-                    data-i18n="sm_title_accent">Media</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-400 dark:text-zinc-600 mb-4 block" data-i18n="sm_subtitle">VIRAL NARRATIVES</span>
+            <h1 class="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none text-zinc-900 dark:text-white mb-6">
+                <span data-i18n="sm_title_main">Social</span> <span class="font-thin italic opacity-40 text-primary" data-i18n="sm_title_accent">Media</span>
             </h1>
+            <p class="text-zinc-500 dark:text-zinc-400 text-sm md:text-base font-light leading-relaxed max-w-2xl" data-i18n="sm_desc_top">
+                Structuring viral organic copy, high-converting advertisement funnels, and dynamic interactive scripts to build loyal brand communities across various digital platforms.
+            </p>
             <div class="section-header-line w-full mt-12"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <!-- 1. Studio Al Elysée - Makeup -->
-            <div
-                class="group bg-white/[0.02] border border-white/5 rounded-3xl p-10 flex flex-col gap-8 transition-all duration-500 hover:bg-white/[0.04]">
-                <div class="flex justify-between items-start">
-                    <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary">face_retouching_natural</span>
-                    </span>
-                    <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest"
-                        data-i18n="sm_brand1">Studio Al Elysée</span>
+        <!-- Social Posts Campaigns Grid (Arab Dental Center placed at the absolute top) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 transition-all duration-550">
+            
+            <!-- 1. Arab Dental - Botox (Reordered to Top) -->
+            <div class="group bg-white/50 dark:bg-white/[0.01] border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 hover:border-primary transition-all duration-500 flex flex-col justify-between h-[360px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start">
+                        <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">dentistry</span>
+                        </span>
+                        <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest" data-i18n="sm_brand3">Arab Dental Center</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-3" data-i18n="sm_post6_title">Botox Treatment for Teeth Grinding</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs font-light leading-relaxed line-clamp-4" data-i18n="sm_post6_desc">Dr. Saba Al-Hayari, prosthodontics specialist, treats sleep bruxism using Botox injections to relax jaw muscles.</p>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-4" data-i18n="sm_post1_title">How beautiful my baby is!
-                    </h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed font-light" data-i18n="sm_post1_desc">
-                        God gave me a beautiful talent, I love makeup and hair. My ambition is as high as the sky! I
-                        want to be the best #makeup_artist. Free bookings available!
-                    </p>
-                </div>
-                <div class="mt-auto h-px w-full bg-white/5"></div>
-                <div class="flex items-center justify-between">
-                    <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Facebook Watch</span>
-                    <a href="https://fb.watch/FA2rM42uqg/" target="_blank"
-                        class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
-                        <span data-i18n="sm_view_post">View Post</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 2. Studio Al Elysée - Karam -->
-            <div
-                class="group bg-white/[0.02] border border-white/5 rounded-3xl p-10 flex flex-col gap-8 transition-all duration-500 hover:bg-white/[0.04]">
-                <div class="flex justify-between items-start">
-                    <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary">palette</span>
-                    </span>
-                    <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest"
-                        data-i18n="sm_brand1">Studio Al Elysée</span>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-4" data-i18n="sm_post2_title">I am Karam.. Walking
-                        towards my dream</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed font-light" data-i18n="sm_post2_desc">
-                        I was busy at the paint workshop at Al Elysée when mom took me to the studio. Everyone was
-                        fascinated by my poses, but I was in another world because the artist inside me woke up.
-                    </p>
-                </div>
-                <div class="mt-auto h-px w-full bg-white/5"></div>
-                <div class="flex items-center justify-between">
-                    <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Facebook Watch</span>
-                    <a href="https://fb.watch/FA2uFIGlkm/" target="_blank"
-                        class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
-                        <span data-i18n="sm_view_post">View Post</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 3. Nashmiya - Car Sounds -->
-            <div
-                class="group bg-white/[0.02] border border-white/5 rounded-3xl p-10 flex flex-col gap-8 transition-all duration-500 hover:bg-white/[0.04]">
-                <div class="flex justify-between items-start">
-                    <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary">minor_crash</span>
-                    </span>
-                    <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest"
-                        data-i18n="sm_brand2">Nashmiya Car Service</span>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-4" data-i18n="sm_post3_title">Recognize your car sounds
-                    </h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed font-light" data-i18n="sm_post3_desc">
-                        With Ahlam and Heba, you won't just fix your car! You'll learn everything about parts, their
-                        functions, and how to recognize sudden sound changes.
-                    </p>
-                </div>
-                <div class="mt-auto h-px w-full bg-white/5"></div>
-                <div class="flex items-center justify-between">
-                    <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Facebook Story</span>
-                    <a href="https://m.facebook.com/story.php?story_fbid=pfbid07Y91Dw7TShyXfmtarB2i6SiJwqVm3CrBdKW4JsHYc5kZDrvnhC9hNXFEQtkWL5QGl&id=100061089792361"
-                        target="_blank"
-                        class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
-                        <span data-i18n="sm_view_post">View Post</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 4. Nashmiya - Dynamo -->
-            <div
-                class="group bg-white/[0.02] border border-white/5 rounded-3xl p-10 flex flex-col gap-8 transition-all duration-500 hover:bg-white/[0.04]">
-                <div class="flex justify-between items-start">
-                    <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary">engineering</span>
-                    </span>
-                    <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest"
-                        data-i18n="sm_brand2">Nashmiya Car Service</span>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-4" data-i18n="sm_post4_title">Ahlam.. The Workshop
-                        Dynamo</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed font-light" data-i18n="sm_post4_desc">
-                        She communicates with you, understands your car's problem, inspects it, and ensures you
-                        understand every part's issue before you leave.
-                    </p>
-                </div>
-                <div class="mt-auto h-px w-full bg-white/5"></div>
-                <div class="flex items-center justify-between">
-                    <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Facebook Story</span>
-                    <a href="https://m.facebook.com/story.php?story_fbid=pfbid02PGv5EcHdKpQPJs5myiXLDrNvXa4BxmnXAkwGYUYxjeetZQGin7SbpMtVKuAxbaZ5l&id=100061089792361"
-                        target="_blank"
-                        class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
-                        <span data-i18n="sm_view_post">View Post</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 5. Nashmiya - Sell/Buy -->
-            <div
-                class="group bg-white/[0.02] border border-white/5 rounded-3xl p-10 flex flex-col gap-8 transition-all duration-500 hover:bg-white/[0.04]">
-                <div class="flex justify-between items-start">
-                    <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary">sell</span>
-                    </span>
-                    <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest"
-                        data-i18n="sm_brand2">Nashmiya Car Service</span>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-4" data-i18n="sm_post5_title">Car Buying & Selling</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed font-light" data-i18n="sm_post5_desc">
-                        New and free service! If you're thinking of selling or buying a car and want the right decision,
-                        Nashmiya will help you without any intermediary.
-                    </p>
-                </div>
-                <div class="mt-auto h-px w-full bg-white/5"></div>
-                <div class="flex items-center justify-between">
-                    <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Facebook Story</span>
-                    <a href="https://m.facebook.com/story.php?story_fbid=pfbid02Z1e9ic2DvS3dqwRmHwS4rr7ZonKV56YeYpYEUx1BosmFCe7w2jdCTKr3Ndw5qBLbl&id=100061089792361"
-                        target="_blank"
-                        class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
-                        <span data-i18n="sm_view_post">View Post</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 6. Arab Dental - Botox -->
-            <div
-                class="group bg-white/[0.02] border border-white/5 rounded-3xl p-10 flex flex-col gap-8 transition-all duration-500 hover:bg-white/[0.04]">
-                <div class="flex justify-between items-start">
-                    <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary">dentistry</span>
-                    </span>
-                    <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest"
-                        data-i18n="sm_brand3">Arab Dental Center</span>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-4" data-i18n="sm_post6_title">Botox Treatment for Teeth
-                        Grinding</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed font-light" data-i18n="sm_post6_desc">
-                        Dr. Saba Al-Hayari, prosthodontics specialist, treats sleep bruxism using Botox injections to
-                        relax jaw muscles.
-                    </p>
-                </div>
-                <div class="mt-auto h-px w-full bg-white/5"></div>
-                <div class="flex items-center justify-between">
+                <div class="pt-6 border-t border-zinc-200/50 dark:border-zinc-800/50 flex items-center justify-between mt-4">
                     <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Instagram Reel</span>
-                    <a href="https://www.instagram.com/reel/CyNgT2EtGmp/?igsh=MXg4MGduemVxbXpmZw==" target="_blank"
-                        class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
+                    <a href="https://www.instagram.com/reel/CyNgT2EtGmp/?igsh=MXg4MGduemVxbXpmZw==" target="_blank" class="px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-zinc-900 dark:hover:bg-white hover:text-white dark:hover:text-zinc-900 transition-all duration-500 flex items-center gap-2">
                         <span data-i18n="sm_view_post">View Post</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                        <span class="material-symbols-outlined text-[12px]">arrow_outward</span>
                     </a>
                 </div>
             </div>
 
-            <!-- 7. Arab Dental - Generic -->
-            <div
-                class="group bg-white/[0.02] border border-white/5 rounded-3xl p-10 flex flex-col gap-8 transition-all duration-500 hover:bg-white/[0.04]">
-                <div class="flex justify-between items-start">
-                    <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary">medical_services</span>
-                    </span>
-                    <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest"
-                        data-i18n="sm_brand3">Arab Dental Center</span>
+            <!-- 2. Arab Dental - Generic (Reordered to Top) -->
+            <div class="group bg-white/50 dark:bg-white/[0.01] border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 hover:border-primary transition-all duration-500 flex flex-col justify-between h-[360px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start">
+                        <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">medical_services</span>
+                        </span>
+                        <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest" data-i18n="sm_brand3">Arab Dental Center</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-3" data-i18n="sm_post7_title">Arab Dental Center</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs font-light leading-relaxed line-clamp-4" data-i18n="sm_post7_desc">Follow us to know the latest services and offers for cosmetic dentistry and surgery-free implants.</p>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-4" data-i18n="sm_post7_title">Arab Dental Center</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed font-light" data-i18n="sm_post7_desc">
-                        Follow us to know the latest services and offers for cosmetic dentistry and surgery-free
-                        implants.
-                    </p>
-                </div>
-                <div class="mt-auto h-px w-full bg-white/5"></div>
-                <div class="flex items-center justify-between">
+                <div class="pt-6 border-t border-zinc-200/50 dark:border-zinc-800/50 flex items-center justify-between mt-4">
                     <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Instagram Reel</span>
-                    <a href="https://www.instagram.com/reel/Cx-RT1FNKdE/?igsh=MW91Y3A1bXViOHN6cA==" target="_blank"
-                        class="px-5 py-2.5 rounded-full border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-primary hover:text-background-dark transition-all duration-500 flex items-center gap-2">
+                    <a href="https://www.instagram.com/reel/Cx-RT1FNKdE/?igsh=MW91Y3A1bXViOHN6cA==" target="_blank" class="px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-zinc-900 dark:hover:bg-white hover:text-white dark:hover:text-zinc-900 transition-all duration-500 flex items-center gap-2">
                         <span data-i18n="sm_view_post">View Post</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                        <span class="material-symbols-outlined text-[12px]">arrow_outward</span>
                     </a>
                 </div>
             </div>
+
+            <!-- 3. Dr. Eman Fayez Abdullah (NEW 8th Card) -->
+            <div class="group bg-white/50 dark:bg-white/[0.01] border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 hover:border-primary transition-all duration-500 flex flex-col justify-between h-[360px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start">
+                        <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">child_care</span>
+                        </span>
+                        <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest" data-i18n="sm_brand4">Dr. Eman Fayez Abdullah</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-3" data-i18n="sm_post8_title">Branding & Direct Consultation</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs font-light leading-relaxed line-clamp-4" data-i18n="sm_post8_desc">Devising digital layout strategies, patient trust guides, and informative health clips for Dr. Eman Fayez Abdullah's elite pediatric and neonatal clinics.</p>
+                    </div>
+                </div>
+                <div class="pt-6 border-t border-zinc-200/50 dark:border-zinc-800/50 flex items-center justify-between mt-4">
+                    <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Instagram Page</span>
+                    <a href="https://www.instagram.com/dr.eman.fayez.abdullah?igsh=MXdrZGNob2oxczEzcA==" target="_blank" class="px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-zinc-900 dark:hover:bg-white hover:text-white dark:hover:text-zinc-900 transition-all duration-500 flex items-center gap-2">
+                        <span data-i18n="sm_view_post">View Profile</span>
+                        <span class="material-symbols-outlined text-[12px]">arrow_outward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4. Studio Al Elysée - Makeup (Original 1) -->
+            <div class="group bg-white/50 dark:bg-white/[0.01] border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 hover:border-primary transition-all duration-500 flex flex-col justify-between h-[360px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start">
+                        <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">face_retouching_natural</span>
+                        </span>
+                        <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest" data-i18n="sm_brand1">Studio Al Elysée</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-3" data-i18n="sm_post1_title">How beautiful my baby is!</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs font-light leading-relaxed line-clamp-4" data-i18n="sm_post1_desc">God gave me a beautiful talent, I love makeup and hair. My ambition is as high as the sky! I want to be the best #makeup_artist. Free bookings available!</p>
+                    </div>
+                </div>
+                <div class="pt-6 border-t border-zinc-200/50 dark:border-zinc-800/50 flex items-center justify-between mt-4">
+                    <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Facebook Watch</span>
+                    <a href="https://fb.watch/FA2rM42uqg/" target="_blank" class="px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-zinc-900 dark:hover:bg-white hover:text-white dark:hover:text-zinc-900 transition-all duration-500 flex items-center gap-2">
+                        <span data-i18n="sm_view_post">View Post</span>
+                        <span class="material-symbols-outlined text-[12px]">arrow_outward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 5. Studio Al Elysée - Karam (Original 2) -->
+            <div class="group bg-white/50 dark:bg-white/[0.01] border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 hover:border-primary transition-all duration-500 flex flex-col justify-between h-[360px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start">
+                        <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">palette</span>
+                        </span>
+                        <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest" data-i18n="sm_brand1">Studio Al Elysée</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-3" data-i18n="sm_post2_title">I am Karam.. Walking towards my dream</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs font-light leading-relaxed line-clamp-4" data-i18n="sm_post2_desc">I was busy at the paint workshop at Al Elysée when mom took me to the studio. Everyone was fascinated by my poses, but I was in another world because the artist inside me woke up.</p>
+                    </div>
+                </div>
+                <div class="pt-6 border-t border-zinc-200/50 dark:border-zinc-800/50 flex items-center justify-between mt-4">
+                    <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Facebook Watch</span>
+                    <a href="https://fb.watch/FA2uFIGlkm/" target="_blank" class="px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-zinc-900 dark:hover:bg-white hover:text-white dark:hover:text-zinc-900 transition-all duration-500 flex items-center gap-2">
+                        <span data-i18n="sm_view_post">View Post</span>
+                        <span class="material-symbols-outlined text-[12px]">arrow_outward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 6. Nashmiya - Car Sounds (Original 3) -->
+            <div class="group bg-white/50 dark:bg-white/[0.01] border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 hover:border-primary transition-all duration-500 flex flex-col justify-between h-[360px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start">
+                        <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">minor_crash</span>
+                        </span>
+                        <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest" data-i18n="sm_brand2">Nashmiya Car Service</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-3" data-i18n="sm_post3_title">Recognize your car sounds</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs font-light leading-relaxed line-clamp-4" data-i18n="sm_post3_desc">With Ahlam and Heba, you won't just fix your car! You'll learn everything about parts, their functions, and how to recognize sudden sound changes.</p>
+                    </div>
+                </div>
+                <div class="pt-6 border-t border-zinc-200/50 dark:border-zinc-800/50 flex items-center justify-between mt-4">
+                    <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Facebook Story</span>
+                    <a href="https://m.facebook.com/story.php?story_fbid=pfbid07Y91Dw7TShyXfmtarB2i6SiJwqVm3CrBdKW4JsHYc5kZDrvnhC9hNXFEQtkWL5QGl&id=100061089792361" target="_blank" class="px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-zinc-900 dark:hover:bg-white hover:text-white dark:hover:text-zinc-900 transition-all duration-500 flex items-center gap-2">
+                        <span data-i18n="sm_view_post">View Post</span>
+                        <span class="material-symbols-outlined text-[12px]">arrow_outward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 7. Nashmiya - Dynamo (Original 4) -->
+            <div class="group bg-white/50 dark:bg-white/[0.01] border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 hover:border-primary transition-all duration-500 flex flex-col justify-between h-[360px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start">
+                        <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">engineering</span>
+                        </span>
+                        <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest" data-i18n="sm_brand2">Nashmiya Car Service</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-3" data-i18n="sm_post4_title">Ahlam.. The Workshop Dynamo</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs font-light leading-relaxed line-clamp-4" data-i18n="sm_post4_desc">She communicates with you, understands your car's problem, inspects it, and ensures you understand every part's issue before you leave.</p>
+                    </div>
+                </div>
+                <div class="pt-6 border-t border-zinc-200/50 dark:border-zinc-800/50 flex items-center justify-between mt-4">
+                    <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Facebook Story</span>
+                    <a href="https://m.facebook.com/story.php?story_fbid=pfbid02PGv5EcHdKpQPJs5myiXLDrNvXa4BxmnXAkwGYUYxjeetZQGin7SbpMtVKuAxbaZ5l&id=100061089792361" target="_blank" class="px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-zinc-900 dark:hover:bg-white hover:text-white dark:hover:text-zinc-900 transition-all duration-500 flex items-center gap-2">
+                        <span data-i18n="sm_view_post">View Post</span>
+                        <span class="material-symbols-outlined text-[12px]">arrow_outward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 8. Nashmiya - Sell/Buy (Original 5) -->
+            <div class="group bg-white/50 dark:bg-white/[0.01] border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 hover:border-primary transition-all duration-500 flex flex-col justify-between h-[360px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start">
+                        <span class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">sell</span>
+                        </span>
+                        <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest" data-i18n="sm_brand2">Nashmiya Car Service</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-3" data-i18n="sm_post5_title">Car Buying & Selling</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs font-light leading-relaxed line-clamp-4" data-i18n="sm_post5_desc">New and free service! If you're thinking of selling or buying a car and want the right decision, Nashmiya will help you without any intermediary.</p>
+                    </div>
+                </div>
+                <div class="pt-6 border-t border-zinc-200/50 dark:border-zinc-800/50 flex items-center justify-between mt-4">
+                    <span class="text-[9px] font-black text-primary uppercase tracking-[0.2em]">Facebook Story</span>
+                    <a href="https://m.facebook.com/story.php?story_fbid=pfbid02Z1e9ic2DvS3dqwRmHwS4rr7ZonKV56YeYpYEUx1BosmFCe7w2jdCTKr3Ndw5qBLbl&id=100061089792361" target="_blank" class="px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-zinc-900 dark:hover:bg-white hover:text-white dark:hover:text-zinc-900 transition-all duration-500 flex items-center gap-2">
+                        <span data-i18n="sm_view_post">View Post</span>
+                        <span class="material-symbols-outlined text-[12px]">arrow_outward</span>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-zinc-900 text-white py-24 px-6 lg:px-20 overflow-hidden relative">
-        <div
-            class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2">
-        </div>
+    <footer class="bg-zinc-900 text-white py-20 px-6 lg:px-20 overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
         <div class="max-w-[1440px] mx-auto relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20 border-b border-white/10 pb-20">
-                <div class="lg:col-span-12">
-                    <span class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-500 mb-6 block"
-                        data-i18n="footer_ready">Ready to
-                        Connect?</span>
-                    <h2 class="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none mb-12">
-                        <span data-i18n="footer_collab_bg">LET'S</span> <span
-                            class="font-thin italic opacity-40 text-background-light"
-                            data-i18n="footer_collab_accent">Collaborate</span>
-                    </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-16 border-b border-white/10 pb-16">
+                <div class="lg:col-span-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                    <div>
+                        <span class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-500 mb-4 block" data-i18n="footer_ready">Ready to Connect?</span>
+                        <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none text-white">
+                            <span data-i18n="footer_collab_bg">LET'S</span> <span class="font-thin italic opacity-40 text-primary" data-i18n="footer_collab_accent">Collaborate</span>
+                        </h2>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="mailto:Kholud80@hotmail.com" class="size-14 rounded-full border border-white/10 hover:border-primary flex items-center justify-center hover:bg-white hover:text-background-dark transition-all">
+                            <span class="material-symbols-outlined text-lg">mail</span>
+                        </a>
+                        <a href="https://wa.me/962778699060" target="_blank" class="size-14 rounded-full border border-white/10 hover:border-primary flex items-center justify-center hover:bg-white hover:text-background-dark transition-all">
+                            <span class="material-symbols-outlined text-lg">chat</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div
-                class="flex flex-col md:flex-row justify-between items-center text-[10px] font-mono text-zinc-500 uppercase tracking-widest gap-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-[10px] font-mono text-zinc-500 uppercase tracking-widest gap-8">
                 <p data-i18n="footer_rights">© 2026 KHOLUD MOHAMMAD. ALL RIGHTS RESERVED.</p>
                 <div class="flex gap-8">
                     <span data-i18n="footer_service_1">Content Strategy</span>
@@ -337,32 +368,57 @@
         </div>
     </footer>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/962778699060" target="_blank" class="whatsapp-float size-16 rounded-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center hover:scale-110 active:scale-95 shadow-2xl shadow-green-500/30 group">
+        <span class="absolute right-full mr-3 py-1.5 px-4 rounded-full bg-zinc-900 text-white text-[10px] font-bold uppercase tracking-widest pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap" id="wa-tooltip">Chat on WhatsApp</span>
+        <svg class="size-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.968C16.634 3.975 14.16 2.953 11.53 2.952c-5.438 0-9.863 4.371-9.867 9.8c-.001 1.73.456 3.42 1.32 4.927l-.995 3.635 3.731-.968.041-.01.018-.012zM17.65 14.96c-.3-.15-1.774-.875-2.046-.975-.27-.1-.466-.15-.66.15-.194.3-.75.95-.92 1.15-.17.2-.34.225-.64.075-.3-.15-1.265-.465-2.41-1.485-.89-.795-1.49-1.78-1.665-2.08-.175-.3-.02-.46.13-.61.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.66-1.59-.9-2.175-.236-.566-.46-.49-.66-.5H8.3c-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.22 5.11 4.52.714.31 1.27.496 1.7.635.717.227 1.37.195 1.885.118.575-.085 1.775-.725 2.025-1.425.25-.7.25-1.3 0-1.425z"/>
+        </svg>
+    </a>
+
+    <!-- Language support system -->
     <script>
         const translations = {
             en: {
                 header_name: "KHOLUD MOHAMMAD",
                 nav_home: "Home",
-                sm_subtitle: "Viral Narratives",
+                sm_subtitle: "VIRAL NARRATIVES",
                 sm_title_main: "Social",
                 sm_title_accent: "Media",
+                sm_desc_top: "Structuring viral organic copy, high-converting advertisement funnels, and dynamic interactive scripts to build loyal brand communities across various digital platforms.",
+                
+                // Brands
                 sm_brand1: "Studio Al Elysée",
                 sm_brand2: "Nashmiya Car Service",
                 sm_brand3: "Arab Dental Center",
+                sm_brand4: "Dr. Eman Fayez Abdullah",
+                
                 sm_view_post: "View Post",
+                
                 sm_post1_title: "How beautiful my baby is!",
                 sm_post1_desc: "God gave me a beautiful talent, I love makeup and hair. My ambition is as high as the sky! I want to be the best #makeup_artist. Free bookings available!",
+                
                 sm_post2_title: "I am Karam.. Walking towards my dream",
                 sm_post2_desc: "I was busy at the paint workshop at Al Elysée when mom took me to the studio. Everyone was fascinated by my poses, but I was in another world because the artist inside me woke up.",
+                
                 sm_post3_title: "Recognize your car sounds",
                 sm_post3_desc: "With Ahlam and Heba, you won't just fix your car! You'll learn everything about parts, their functions, and how to recognize sudden sound changes.",
+                
                 sm_post4_title: "Ahlam.. The Workshop Dynamo",
                 sm_post4_desc: "She communicates with you, understands your car's problem, inspects it, and ensures you understand every part's issue before you leave.",
+                
                 sm_post5_title: "Car Buying & Selling",
                 sm_post5_desc: "New and free service! If you're thinking of selling or buying a car and want the right decision, Nashmiya will help you without any intermediary.",
+                
                 sm_post6_title: "Botox Treatment for Teeth Grinding",
                 sm_post6_desc: "Dr. Saba Al-Hayari, prosthodontics specialist, treats sleep bruxism using Botox injections to relax jaw muscles.",
+                
                 sm_post7_title: "Arab Dental Center",
                 sm_post7_desc: "Follow us to know the latest services and offers for cosmetic dentistry and surgery-free implants.",
+                
+                sm_post8_title: "Pediatric Branding & Consultation",
+                sm_post8_desc: "Devising digital layout strategies, patient trust guides, and informative health clips for Dr. Eman Fayez Abdullah's elite pediatric and neonatal clinics.",
+
                 footer_ready: "Ready to Connect?",
                 footer_collab_bg: "LET'S",
                 footer_collab_accent: "Collaborate",
@@ -373,27 +429,43 @@
             ar: {
                 header_name: "خلود محمد",
                 nav_home: "الرئيسية",
-                sm_subtitle: "روايات واسعة الانتشار",
+                sm_subtitle: "حملات رقمية وجمهور متفاعل",
                 sm_title_main: "وسائل",
                 sm_title_accent: "التواصل",
+                sm_desc_top: "صياغة منشورات جذابة تحقق انتشاراً واسعاً، وبناء مسارات تسويقية عالية التحويل، وكتابة سيناريوهات تفاعلية لتعزيز حضور العلامات التجارية وبناء مجتمعات رقمية مخلصة.",
+                
+                // Brands
                 sm_brand1: "ستوديو الأليزيه",
                 sm_brand2: "نشمية لخدمة السيارات",
                 sm_brand3: "المركز العربي لطب الأسنان",
+                sm_brand4: "د. إيمان فايز عبد الله",
+                
                 sm_view_post: "عرض المنشور",
+                
                 sm_post1_title: "شو حلو حبيبي شو حلووو",
                 sm_post1_desc: "ربنا أعطاني موهبة جمالية وفنية حلوة بحب الميكاب والشعر طموحي فووووق فوووق .. واصل السماااااا بس أكبر بدي أكون أروع #ميكاب_ارتست وعلى فكرة .. في حجوزات مجانية.",
+                
                 sm_post2_title: "أنا كرم .. أنا على طريق الحلم أسير",
                 sm_post2_desc: "كنت معجوق بورشة دهان عند الأليزيه ماما أخدتني تصورني بالاستوديو كلهم انعجقوا فيني بوزات وحركات وتجهيزات وهيكا بس أنا كنت بعالم تاني.. لإنه الفنان اللي جواني صحي.",
+                
                 sm_post3_title: "تميزي أصوات سيارتك",
                 sm_post3_desc: "مع أحلام وهبة مش بس رح تصلحي سيارتك! رح تتعرفي على كل إشي بتعلق فيها من أسماء القطع وشو فايدتها وكيف تصيري تميزي كل الأصوات والتغيير اللي بصير فجأة معك.",
+                
                 sm_post4_title: "أحلام .. دينامو الورشة",
                 sm_post4_desc: "بتتواصل معك .. بتعرف مشكلة سيارتك .. بتفحصلك إياها .. وما بطلعك من عندها إلا وإنتي فاهمة مشكلة القطع .. هبة الجندي المجهول بتوصلك وين ما كنتي.. وبتساعدك تقضي مشاويرك.",
+                
                 sm_post5_title: "بيع وشراء السيارات",
                 sm_post5_desc: "خدمة جديدة ومجانية! لو بتفكري تبيعي سيارتك أو تشتري سيارة جديدة وبدك قرارك يكون صح ١٠٠٪ سواء بالبيع أو الشراء! نشمية رح تساعدك بدون أي وسيط.",
+                
                 sm_post6_title: "علاج صرير الأسنان بالبوتوكس",
                 sm_post6_desc: "دكتورة سبأ الحياري اختصاصية تركيبات الأسنان حالة علاج مشكلة صرير الأسنان خلال النوم (الصكصكة) باستخدام ابر البوتوكس تساعد ابر البوتوكس على ترخية عضلات الفك.",
+                
                 sm_post7_title: "المركز العربي لطب الأسنان",
                 sm_post7_desc: "تابعونا لمعرفة آخر الخدمات والعروض المقدمة في المركز العربي لطب الأسنان للتجميل والزراعة بدون جراحة.",
+                
+                sm_post8_title: "الهوية الرقمية والاستشارات الطبية",
+                sm_post8_desc: "تطوير استراتيجية الهوية الرقمية، وأدلة كسب ثقة المرضى، والمقاطع التوعوية لعيادات الأطفال وحديثي الولادة للدكتورة إيمان فايز عبد الله.",
+
                 footer_ready: "هل أنت جاهز للتواصل؟",
                 footer_collab_bg: "لنتعاون",
                 footer_collab_accent: "معاً",
@@ -413,13 +485,25 @@
                 }
             });
 
-            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            const isAr = lang === 'ar';
+            document.documentElement.dir = isAr ? 'rtl' : 'ltr';
             document.documentElement.lang = lang;
+
+            if (isAr) {
+                document.body.classList.add('cairo-font');
+            } else {
+                document.body.classList.remove('cairo-font');
+            }
 
             const langTexts = document.querySelectorAll('#lang-text');
             langTexts.forEach(el => {
-                el.innerText = lang === 'en' ? 'AR' : 'EN';
+                el.innerText = isAr ? 'EN' : 'AR';
             });
+
+            const waTooltip = document.getElementById('wa-tooltip');
+            if (waTooltip) {
+                waTooltip.innerText = isAr ? 'راسلني عبر واتساب' : 'Chat on WhatsApp';
+            }
 
             currentLang = lang;
             localStorage.setItem('preferredLang', lang);
@@ -434,7 +518,6 @@
             updateLanguage(currentLang);
         });
     </script>
-
 </body>
 
 </html>
